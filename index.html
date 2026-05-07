@@ -3,107 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibon Atacado - Promoção Ki Loucura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <title>KIBON - Promoção KiLoucura</title>
     <style>
-        :root {
-            --kibon-red: #E2001A;
-            --kibon-yellow: #FFD700;
-            --white: #FFFFFF;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background-color: #E2001A; padding: 15px; }
+        
+        /* CABEÇALHO GIGANTE */
+        .header { text-align: center; padding: 20px 0; color: white; }
+        .promo-txt { font-size: 14px; font-weight: bold; letter-spacing: 2px; }
+        .logo-gigante { font-size: 70px; font-weight: 900; letter-spacing: -4px; line-height: 1; margin: 5px 0; }
+        .tag-amarela { background: #FFD700; color: #E2001A; padding: 5px 15px; border-radius: 50px; font-weight: 900; display: inline-block; }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-
-        body {
-            background-color: #d10016;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 15px;
-        }
-
-        .main-card {
-            background-color: var(--kibon-red);
-            width: 100%;
-            max-width: 500px;
-            border-radius: 40px;
-            border: 5px solid var(--white);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-            overflow: hidden;
-            color: var(--white);
-        }
-
-        /* CABEÇALHO COM NOME GIGANTE */
-        .header-promo {
-            text-align: center;
-            padding: 30px 20px 10px;
-        }
-
-        .promo-ki {
-            font-size: 18px;
-            color: var(--white);
-            letter-spacing: 2px;
-            font-weight: 700;
-            margin-bottom: -5px;
-        }
-
-        .nome-kibon-grande {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 75px; /* NOME GIGANTE */
-            font-weight: 900;
-            color: var(--white);
-            letter-spacing: -4px;
-            line-height: 1;
-            text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
-            margin-bottom: 10px;
-        }
-
-        .tag-loucura {
-            display: inline-block;
-            background: var(--kibon-yellow);
-            color: var(--kibon-red);
-            padding: 5px 20px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 20px;
-            transform: rotate(-3deg);
-            box-shadow: 3px 3px 0px #000;
-        }
-
-        /* AREA DE PREÇO ATACADO */
-        .price-container {
-            background: #000;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 20px;
-            border: 2px solid var(--kibon-yellow);
-            text-align: center;
-        }
-
-        .price-label { font-size: 12px; color: var(--kibon-yellow); font-weight: 700; letter-spacing: 1px; }
-        .price-value { font-size: 55px; font-weight: 900; display: block; margin: 5px 0; }
-        .price-bonus { color: #28a745; font-size: 12px; font-weight: 700; }
+        /* PREÇO */
+        .box-preço { background: #000; border: 2px solid #FFD700; border-radius: 20px; margin: 20px 0; padding: 20px; text-align: center; color: white; }
+        .preço-valor { font-size: 50px; font-weight: 900; display: block; }
 
         /* FORMULÁRIO */
-        .form-area {
-            background: #fff;
-            padding: 25px;
-            color: #333;
-        }
-
-        .form-title {
-            text-align: center;
-            font-weight: 800;
-            color: var(--kibon-red);
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .input-group { margin-bottom: 12px; }
-        label { display: block; font-size: 11px; font-weight: 800; color: #666; margin-bottom: 4px; text-transform: uppercase; }
+        .card-branco { background: white; border-radius: 25px; padding: 25px; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .titulo-form { text-align: center; font-weight: bold; margin-bottom: 20px; color: #E2001A; }
         
-        input {
-            width: 100%;
-            padding: 14px;
-            border:
+        .campo { margin-bottom: 12px; }
+        label { display: block; font-size: 11px; font-weight: bold; color: #666; margin-bottom: 4px; text-transform: uppercase; }
+        input { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px; font-size: 14px; outline: none; }
+        input:focus { border-color: #E2001A; }
+
+        .btn-enviar { width: 100%; padding: 18px; background: #E2001A; color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: 900; cursor: pointer; margin-top: 10px; }
+        .footer { text-align: center; font-size: 10px; color: rgba(255,255,255,0.7); margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <p class="promo-txt">PROMOÇÃO</p>
+        <h1 class="logo-gigante">KIBON</h1>
+        <div class="tag-amarela">KILOUCURA ATACADO</div>
+    </div>
+
+    <div class="box-preço">
+        <p style="font-size: 12px; color: #FFD700;">PICOLÉS REVENDA</p>
+        <span class="preço-valor">R$ 0,59 <small style="font-size: 16px;">un.</small></span>
+        <p style="font-size: 12px; color: #2ecc71;">BÔNUS DE R$ 500,00 ATIVO</p>
+    </div>
+
+    <div class="card-branco">
+        <p class="titulo-form">CADASTRO DE CREDENCIAMENTO</p>
+        
+        <div class="campo">
+            <label>Nome do Responsável</label>
+            <input type="text" id="nome" placeholder="Nome completo">
+        </div>
+
+        <div class="campo">
+            <label>CNPJ ou CPF</label>
+            <input type="text" id="doc" placeholder="000.000.000-00">
+        </div>
+
+        <div class="campo">
+            <label>Nome do Comércio</label>
+            <input type="text" id="loja" placeholder="Nome da sua loja">
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <div
