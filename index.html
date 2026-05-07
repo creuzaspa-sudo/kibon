@@ -3,139 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parceiro Kibon - Cadastro Oficial</title>
+    <title>Kibon - Cadastro e Bônus</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --kibon-red: #e2001a;
-            --kibon-dark: #b80015;
-            --bg-light: #fdfdfd;
-            --text-gray: #444;
-        }
-
+        :root { --kibon-red: #e2001a; --kibon-dark: #b80015; --green: #28a745; }
         * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-
-        body {
-            background-color: #f0f2f5;
-            background-image: radial-gradient(circle at 2px 2px, #ddd 1px, transparent 0);
-            background-size: 40px 40px;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
+        body { background: #f0f2f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+        
         .card {
-            background: white;
-            width: 100%;
-            max-width: 450px;
-            border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            overflow: hidden;
-            border-top: 8px solid var(--kibon-red);
+            background: white; width: 100%; max-width: 450px; border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; position: relative;
         }
 
-        .header {
-            background: #fff;
-            padding: 40px 20px 20px;
-            text-align: center;
+        /* Banner de Bônus */
+        .bonus-badge {
+            background: var(--green); color: white; text-align: center;
+            padding: 10px; font-weight: 700; font-size: 14px;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
-        .header img {
-            width: 130px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-            margin-bottom: 15px;
-        }
+        .header { padding: 30px 20px 10px; text-align: center; }
+        .header img { width: 120px; }
+        .header h1 { font-size: 20px; color: var(--kibon-red); margin: 10px 0 5px; font-weight: 700; }
+        .header p { font-size: 13px; color: #666; margin: 0; }
 
-        .header h1 {
-            font-size: 22px;
-            color: var(--kibon-red);
-            margin: 0;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .form-body { padding: 30px; }
-
-        .input-group { margin-bottom: 20px; }
-
-        label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-gray);
-            margin-bottom: 8px;
-            padding-left: 5px;
-        }
-
+        .form-body { padding: 25px; }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 5px; }
         input, select {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            outline: none;
-            background: #fcfcfc;
+            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px;
+            font-size: 14px; transition: 0.3s; outline: none;
         }
+        input:focus { border-color: var(--kibon-red); }
 
-        input:focus, select:focus {
-            border-color: var(--kibon-red);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(226, 0, 26, 0.1);
+        .btn-main {
+            width: 100%; padding: 16px; background: var(--kibon-red); color: white;
+            border: none; border-radius: 12px; font-size: 16px; font-weight: 700;
+            cursor: pointer; transition: 0.3s; margin-top: 10px;
         }
+        .btn-main:hover { background: var(--kibon-dark); transform: scale(1.02); }
 
-        .btn-send {
-            width: 100%;
-            padding: 16px;
-            background: var(--kibon-red);
-            color: white;
-            border: none;
-            border-radius: 14px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, background 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
+        .info-bonus {
+            background: #fff9f0; border: 1px dashed #ffcc00; border-radius: 10px;
+            padding: 15px; margin-top: 15px; text-align: center;
         }
+        .info-bonus span { color: var(--green); font-weight: 800; font-size: 18px; }
 
-        .btn-send:hover {
-            background: var(--kibon-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-send:active { transform: translateY(0); }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #999;
-            background: #fafafa;
-        }
-
-        /* Ícone de WhatsApp simulado */
-        .btn-send::after {
-            content: '→';
-            font-size: 20px;
-        }
+        .footer { text-align: center; padding: 15px; font-size: 11px; color: #999; }
     </style>
 </head>
 <body>
 
 <div class="card">
+    <div class="bonus-badge">🎁 Bônus de Boas-Vindas Ativo</div>
+    
     <div class="header">
         <img src="https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png" alt="Kibon">
-        <h1>Portal de Credenciamento</h1>
+        <h1>Cadastre-se e Ganhe</h1>
+        <p>Preencha abaixo para liberar seu acesso</p>
     </div>
 
-    <form class="form-body" id="regForm">
+    <form class="form-body">
         <div class="input-group">
-            <label>Sua Cidade</label>
-            <input type="text" id="cidade" placeholder="Ex: São Paulo
+            <label>Cidade</label>
+            <input type="text" id="cidade" placeholder="Ex: Osasco" required>
+        </div>
+
+        <div class="input-group">
+            <label>Estado</label>
+            <select id="estado" required>
+                <option value="">Selecione...</option>
+                <option value="SP">São Paulo</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                </select>
+        </div>
+
+        <div class="input-group">
+            <label>Sua Renda</label>
+            <input type="text" id="renda" placeholder="R$ 0,00" required>
+        </div>
+
+        <div class="input-group">
+            <label>Faturamento</label>
+            <input type="text" id="faturamento" placeholder="R$ 0,00" required>
+        </div>
+
+        <div class="info-bonus">
+            Ao finalizar, você receberá o link do APK e<br>
+            <span>R$ 500,00 de Saldo Bônus</span><br>
+            para sua primeira compra!
+        </div>
+
+        <button type="button" class="btn-main" onclick="finalizar()">CADASTRE-SE E GANHE AGORA</button>
+    </form>
+
+    <div class="footer">© 2026 Distribuidora Autorizada Kibon</div>
+</div>
+
+<script>
+    function finalizar() {
+        const meuWhatsapp = "5554999422678"; 
+        const urlDownloadAPK = "https://kibon.com.br/baixar-app"; // COLOQUE O LINK REAL DO SEU APK AQUI
+
+        const cid = document.getElementById('cidade').value;
+        const est = document.getElementById('estado').value;
+        const ren = document.getElementById('renda').value;
+        const fat = document.getElementById('faturamento').value;
+
+        if(!cid || !est || !ren || !fat) {
+            alert("Por favor, preencha todos os campos para garantir seu bônus!");
+            return;
+        }
+
+        const msg = `*CADASTRO BÔNUS R$ 500*%0A` +
+                    `----------------------------%0A` +
+                    `📍 Cidade: ${cid} - ${est}%0A` +
+                    `💰 Renda: ${ren}%0A` +
+                    `📈 Fat: ${fat}%0A` +
+                    `----------------------------%0A` +
+                    `*AGUARDANDO LIBERAÇÃO DO SALDO*`;
+
+        // 1. Abre o WhatsApp em uma nova aba
+        window.open(`https://api.whatsapp.com/send?phone=${meuWhatsapp}&text=${msg}`, '_blank');
+
+        // 2. Avisa o usuário e manda para o download na mesma tela
+        alert("Cadastro realizado! Clique em OK para baixar o Aplicativo e resgatar seus R$ 500,00.");
+        window.location.href = urlDownloadAPK;
+    }
+</script>
+
+</body>
+</html>
