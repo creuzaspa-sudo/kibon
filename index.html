@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIBON - Freezer + Bônus R$ 500</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kibon - Portal do Revendedor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial Black', sans-serif; }
-        body { background: #E2001A; padding: 10px; text-align: center; }
-        .header h1 { font-size: 70px; font-weight: 900; color: #fff; letter-spacing: -5px; margin: 10px 0; text-shadow: 3px 3px 0 #000; }
-        .tag { background: #FFD700; color: #E2001A; padding: 6px 15px; border-radius: 50px; font-weight: 900; display: inline-block; transform: rotate(-2deg); box-shadow: 2px 2px 0 #000; }
-        .box { background: #000; border: 2px solid #FFD700; border-radius: 20px; margin: 15px 0; padding: 15px; color: #fff; }
-        .price { font-size: 45px; font-weight: 900; display: block; color: #fff; }
-        .card { background: #fff; border-radius: 25px; padding: 20px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        label { display: block; font-size: 10px; font-weight: bold; color: #777; margin-bottom: 3px; text-transform: uppercase; font-family: sans-serif; }
-        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px; margin-bottom: 12px; outline: none; font-weight: bold; }
-        .error { color: #ff4d4d; font-size: 10px; font-weight: bold; display: none; margin-bottom: 10px; font-family: sans-serif; }
-        .btn { width: 100%; padding: 20px; background: #E2001A; color: #fff; border: none; border-radius: 50px; font-size: 18px; font-weight: 900; cursor: pointer; text-transform: uppercase; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        .footer { font-size: 10px; color: #fff; margin-top: 15px; opacity: 0.8; font-family: sans-serif; }
-    </style>
-</head>
-<body>
-    <div class="header"><h1>KIBON</h1><div class="tag">PROMOÇÃO KILOUCURA</div></div>
-    <div class="box">
-        <span style="color:#FFD700; font-size:11px; font-weight:bold; letter-spacing:1px;">TABELA REVENDA</span>
-        <span class="price">R$ 0,59</span>
-        <p style="font-size:12px; color:#FFD700; font-weight:bold;">🎁 GANHE O FREEZER + R$ 500 DE BÔNUS NO APP</p>
-    </div>
-    <div class="card">
-        <label>Nome do Responsável</label><input type="text" id="nome" placeholder="Titular">
-        <label>Nome do Comércio</label><input type="text" id="loja" placeholder="Nome da Loja
+        :root { --kibon-red: #E2001A; --kibon-yellow: #FFD700; --dark: #1a1a1a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+        body { background: #fdfdfd; color: var(--dark); line-height: 1.6; }
+        
+        /* Header Profissional */
+        header { background: var(--kibon-red); padding: 40px 20px; text-align: center; border-bottom: 6px solid var(--kibon-yellow); color: white; }
+        .logo { font-size: 55px; font-weight: 900; letter-spacing: -3px; display: block; line-height: 1; }
+        .promo-badge { background: white; color: var(--kibon-red); display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: 800; font-size: 12px; margin-top: 10px; text-transform: uppercase; }
+
+        .hero-box { max-width: 500px; margin: -20px auto 20px; background: var(--dark); color: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .hero-box h2 { font-size: 14px; color: var(--kibon-yellow); text-transform: uppercase; letter-spacing: 1px; }
+        .price { font-size: 48px; font-weight: 900; display: block; margin: 5px 0; }
+        .benefit { font-size: 13px; font-weight: 700; border-top: 1px solid #333; padding-top: 10px; color: #00ff88; }
+
+        /* Formulário de Alta Conversão */
+        .form-container { max-width: 500px; margin: 0 auto 40px; padding: 0 20px; }
+        .card { background: white; padding: 30px; border-radius: 25px; border: 1px solid #eee; }
+        .field { margin-bottom: 18px; }
+        label { display: block; font-size: 11px; font-weight: 700; color: #999; margin-bottom: 6px; text-transform: uppercase; }
+        input, select { width: 100%; padding: 14px; border: 2px solid #f0f0f0; border-radius: 12px; font-size: 15px; outline: none; transition: 0.3s; font-weight: 600; }
+        input:focus { border-color: var(--kibon-red); background: #fffcfc; }
+        
+        .error-msg { color: var(--kibon-red); font-size: 11px; font-weight: 700; display: none; margin-top: 5px; }
+
+        .btn-cta { width: 100%; padding: 22px; background: var(--kibon-red); color: white; border: none; border-radius: 15px; font-size: 16px; font-weight: 800; cursor: pointer; text-transform: uppercase; box-shadow: 0 10px 20px rgba(226,
