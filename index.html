@@ -3,95 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Comércio - Sorvetes Kibon</title>
+    <title>Parceiro Kibon - Cadastro Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --kibon-red: #e2001a;
-            --kibon-blue: #005596;
+            --kibon-dark: #b80015;
+            --bg-light: #fdfdfd;
+            --text-gray: #444;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .header { text-align: center; margin-bottom: 25px; }
-        .header img { width: 150px; border-radius: 10px; }
-        h2 { color: var(--kibon-red); text-align: center; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
-        input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; background-color: #25d366; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        button:hover { background-color: #128c7e; }
-        .footer-link { text-align: center; margin-top: 20px; font-size: 14px; }
+
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            background-color: #f0f2f5;
+            background-image: radial-gradient(circle at 2px 2px, #ddd 1px, transparent 0);
+            background-size: 40px 40px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-top: 8px solid var(--kibon-red);
+        }
+
+        .header {
+            background: #fff;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+        .header img {
+            width: 130px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            color: var(--kibon-red);
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .form-body { padding: 30px; }
+
+        .input-group { margin-bottom: 20px; }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            outline: none;
+            background: #fcfcfc;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--kibon-red);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(226, 0, 26, 0.1);
+        }
+
+        .btn-send {
+            width: 100%;
+            padding: 16px;
+            background: var(--kibon-red);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-send:hover {
+            background: var(--kibon-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-send:active { transform: translateY(0); }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #999;
+            background: #fafafa;
+        }
+
+        /* Ícone de WhatsApp simulado */
+        .btn-send::after {
+            content: '→';
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
     <div class="header">
-        <!-- Substitua o link abaixo pela URL da imagem oficial ou do seu repositório -->
-        <img src="https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png" alt="Logo Kibon">
+        <img src="https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png" alt="Kibon">
+        <h1>Portal de Credenciamento</h1>
     </div>
 
-    <h2>Cadastro de Parceiro</h2>
-    
-    <form id="cadastroForm">
-        <div class="form-group">
-            <label>Cidade:</label>
-            <input type="text" id="cidade" placeholder="Ex: Osasco" required>
-        </div>
-
-        <div class="form-group">
-            <label>Estado:</label>
-            <select id="estado" required>
-                <option value="">Selecione</option>
-                <option value="SP">São Paulo</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="MG">Minas Gerais</option>
-                <!-- Adicione outros estados conforme necessário -->
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Renda Mensal Estimada:</label>
-            <input type="text" id="renda" placeholder="R$ 0,00" required>
-        </div>
-
-        <div class="form-group">
-            <label>Faturamento Atual do Comércio:</label>
-            <input type="text" id="faturamento" placeholder="R$ 0,00" required>
-        </div>
-
-        <button type="button" onclick="enviarWhatsApp()">Finalizar Cadastro e Receber App</button>
-    </form>
-
-    <div class="footer-link">
-        <p>Ao clicar, você será redirecionado para o suporte via WhatsApp.</p>
-    </div>
-</div>
-
-<script>
-    function enviarWhatsApp() {
-        // --- CONFIGURAÇÕES ---
-        const fone = "555499422678"; // COLOQUE SEU WHATSAPP AQUI (DDI + DDD + NUMERO)
-        const urlApp = "SUA_URL_DO_ARQUIVO_AQUI"; // COLOQUE A URL DO SEU APK/APP AQUI
-
-        // Captura dos dados
-        const cidade = document.getElementById('cidade').value;
-        const estado = document.getElementById('estado').value;
-        const renda = document.getElementById('renda').value;
-        const faturamento = document.getElementById('faturamento').value;
-
-        // Montagem da mensagem
-        const mensagem = `Olá! Gostaria de finalizar meu cadastro Kibon:%0A%0A` +
-                         `*Cidade:* ${cidade}%0A` +
-                         `*Estado:* ${estado}%0A` +
-                         `*Renda:* ${renda}%0A` +
-                         `*Faturamento:* ${faturamento}%0A%0A` +
-                         `*Link do App:* ${urlApp}`;
-
-        // Redirecionamento
-        const wpLink = `https://api.whatsapp.com/send?phone=${fone}&text=${mensagem}`;
-        window.open(wpLink, '_blank');
-    }
-</script>
-
-</body>
-</html>
+    <form class="form-body" id="regForm">
+        <div class="input-group">
+            <label>Sua Cidade</label>
+            <input type="text" id="cidade" placeholder="Ex: São Paulo
