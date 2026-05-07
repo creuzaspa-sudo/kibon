@@ -3,74 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibon Atacado - Picolés a R$ 0,59</title>
+    <title>Kibon Atacado - Picolés R$ 0,59</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --kibon-red: #E2001A;
-            --kibon-yellow: #FFD700;
-            --price-green: #2ecc71;
-        }
-
+        :root { --kibon-red: #E2001A; --kibon-yellow: #FFD700; }
         * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: #f0f2f5; margin: 0; padding: 10px; }
-
-        .container {
-            background: #fff;
-            width: 100%;
-            max-width: 500px;
-            margin: 10px auto;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-
-        .header-flash {
-            background: var(--kibon-red);
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            font-weight: 900;
-            font-size: 16px;
-            text-transform: uppercase;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
-        }
-
+        .container { background: #fff; width: 100%; max-width: 500px; margin: 10px auto; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); overflow: hidden; }
+        .header-flash { background: var(--kibon-red); color: #fff; text-align: center; padding: 15px; font-weight: 900; font-size: 16px; text-transform: uppercase; }
         .main-header { padding: 30px 20px 10px; text-align: center; }
-        .logo-txt { font-size: 40px; font-weight: 900; color: var(--kibon-red); letter-spacing: -2px; }
-        
-        .promo-box {
-            background: var(--kibon-yellow);
-            margin: 15px 20px;
-            padding: 15px;
-            border-radius: 15px;
-            border: 2px dashed var(--kibon-red);
-        }
-
-        .promo-box h2 { margin: 0; font-size: 18px; color: #333; }
-        .promo-box .price-hero { font-size: 42px; color: var(--kibon-red); display: block; font-weight: 900; }
-
-        /* FORMULÁRIO */
+        .logo-txt { font-size: 40px; font-weight: 900; color: var(--kibon-red); letter-spacing: -2px; margin: 0; }
+        .promo-box { background: var(--kibon-yellow); margin: 15px 10px; padding: 15px; border-radius: 15px; border: 2px dashed var(--kibon-red); }
+        .price-hero { font-size: 42px; color: var(--kibon-red); display: block; font-weight: 900; }
         .form-section { padding: 20px; }
         .input-group { margin-bottom: 12px; }
         label { display: block; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 4px; text-transform: uppercase; }
-        input {
-            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px;
-            font-size: 14px; outline: none; background: #fafafa;
-        }
+        input { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 14px; outline: none; background: #fafafa; }
         input:focus { border-color: var(--kibon-red); background: #fff; }
+        .btn-ready { width: 100%; padding: 20px; background: var(--kibon-red); color: #fff; border: none; border-radius: 50px; font-size: 18px; font-weight: 900; cursor: pointer; box-shadow: 0 10px 20px rgba(226, 0, 26, 0.4); margin-top: 10px; }
+        .catalog-title { background: #f8f8f8; padding: 15px; font-weight: 800; text-align: center; border-top: 1px solid #eee; }
+        .grid-picoles { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .card-picole { border: 1px solid #eee; border-radius: 15px; padding: 10px; text-align: center; }
+        .card-picole img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; }
+        .picole-name { font-size: 12px; font-weight: 700; margin: 8px 0; color: #444; }
+        .atacadista-price { color: #2ecc71; font-weight: 900; font-size: 18px; }
+        .footer { padding: 20px; text-align: center; font-size: 10px; color: #bbb; }
+    </style>
+</head>
+<body>
 
-        .btn-ready {
-            width: 100%; padding: 20px; background: var(--kibon-red); color: #fff;
-            border: none; border-radius: 50px; font-size: 18px; font-weight: 900;
-            cursor: pointer; box-shadow: 0 10px 20px rgba(226, 0, 26, 0.4);
-            margin-top: 10px; transition: 0.3s;
-        }
+<div class="container">
+    <div class="header-flash">🔥 TABELA DE REVENDA LIBERADA 🔥</div>
+    <div class="main-header">
+        <p class="logo-txt">KIBON</p>
+        <div class="promo-box">
+            <h2 style="margin:0; font-size:16px;">Picolés no Atacado</h2>
+            <span class="price-hero">R$ 0,59</span>
+            <p style="font-size: 10px; margin: 5px 0 0;">Exclusivo para Novos Parceiros</p>
+        </div>
+    </div>
 
-        /* CATÁLOGO S
+    <form class="form-section">
+        <div class="input-group"><label>Nome do Responsável</label><input type="text" id="nome" placeholder="Seu nome"></div>
+        <div class="input-group"><label>Nome do Comércio</label><input type="text" id="loja" placeholder="Nome da Loja"></div>
+        <div class="input-group"><label>CPF/CNPJ</label><input type="text" id="doc" placeholder="000.000.000-00"></div>
+        <div style="display:flex; gap:10px; margin-bottom:12px;">
+            <input type="text" id="cid" placeholder="Cidade" style="flex:2;">
+            <input type="text" id="uf" placeholder="UF" maxlength="2" style="flex:1;">
+        </div>
+        <div class="input-group"><label>Modelo do Celular</label><input type="text" id="cel" placeholder="Ex: iPhone 13"></div>
+        <div class="input-group"><label>Sua Renda Mensal</label><input type="text" id="ren" placeholder="R$ 0,00"></div>
+        <button type="button" class="btn-ready" onclick="enviar()">RESERVAR BÔNUS E BAIXAR APP</button>
+    </form>
+
+    <div class="catalog-title">Confira os Modelos (Unitário)</div>
+    <div class="grid-picoles">
+        <div class="card-picole">
+            <img src="https://images.unsplash.com/photo-1505394033343-e94c297a8a35?w=300">
+            <div class="picole-name">Picolé de Frutas</div>
+            <div class="atacadista-price">R$ 0,59</div>
+        </div>
+        <div class="card-picole">
+            <img src="https://images.unsplash.com/photo-1481391243133-f96216d51df7?w=300">
+            <div class="picole-name">Picolé de Leite</div>
+            <div class="atacadista-price">R$ 0,59</div>
+        </div>
+    </div>
+    <div class="footer">DISTRIBUIDORA KIBON BRASIL © 2026</div>
+</div>
+
+<script>
+    function enviar() {
+        const zap = "5554999422678";
+        const linkApk = "URL_DO_SEU_APK_AQUI"; // Coloque seu link real aqui
+
+        const n = document.getElementById('nome').value;
+        const l = document.getElementById('loja').value;
+        const d = document.getElementById('doc').value;
+        const c = document.getElementById('cid').value;
+        const u = document.getElementById('uf').value;
+        const m = document.getElementById('cel').value;
+        const r = document.getElementById('ren').value;
+
+        if(!n || !l || !d) { alert("Preencha todos os campos!"); return; }
